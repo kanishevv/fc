@@ -1,0 +1,104 @@
+.document-header {
+  display: none;
+  position: sticky;
+
+  @include media-breakpoint-down(xs) {
+    &.document-header--mobile-hide {
+      display: none;
+    }
+  }
+
+  &--active {
+    display: block;
+  }
+
+  &--standard {
+    z-index: 100;
+    bottom: 16px;
+    background-color: #fff;
+    padding: 16px 5px 0 16px;
+    height: 356px;
+    box-shadow: 0px 6px 20px rgba(72, 86, 106, 0.14), 0px 1px 18px rgba(72, 86, 106, 0.12), 0px 3px 5px rgba(72, 86, 106, 0.2);
+    border-radius: 4px;
+  }
+
+  &__close {
+    position: absolute;
+    top: 21px;
+    right: 21px;
+    cursor: pointer;
+
+    svg {
+      width: 16px;
+      height: 16px;
+    }
+  }
+
+  &__title {
+    font-family: PT Serif, serif;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 24px;
+    text-align: center;
+    color: #2E3238;
+    margin-bottom: 12px;
+  }
+
+  &__content {
+    position: relative;
+    overflow-y: auto;
+    height: calc(100% - 36px);
+  }
+
+  &__accordion {
+    border: 1px solid #EFF2F5;
+    box-sizing: border-box;
+    border-radius: 2px;
+    padding: 8px 16px;
+    font-family: Roboto, sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 24px;
+    color: #2E3238;
+    margin-bottom: 8px;
+    margin-right: 6px;
+  }
+
+  &__accordion-content {
+    display: flex;
+    flex-direction: column;
+    padding: 4px 16px 12px 32px;
+    margin-bottom: 8px;
+    margin-right: 6px;
+    background: #F8FAFC;
+    border: 1px solid #EFF2F5;
+    box-sizing: border-box;
+    border-radius: 0 2px 2px 0;
+    border-top: none;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__accordion-article {
+    font-family: Roboto, sans-serif;
+    font-size: 14px;
+    line-height: 24px;
+    color: #508CD3;
+    margin-bottom: 8px;
+  }
+
+  .tabs__item_selected {
+    margin-bottom: 0;
+    background: #F8FAFC;
+    border: 1px solid #EFF2F5;
+    border-bottom: 0;
+    box-sizing: border-box;
+    border-radius: 2px 0 0 2px;
+  }
+
+  .js-tab--active {
+    display: flex;
+  }
+}

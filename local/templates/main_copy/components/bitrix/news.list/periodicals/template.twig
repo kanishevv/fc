@@ -1,0 +1,27 @@
+<section class="publication">
+    {% for item in result.ITEMS %}
+        <a href="{{ item.URL }}" class="publication__item" target="_blank">
+            <picture class="publication__pic">
+                <img src="{{ item.PREVIEW_PICTURE.SRC }}" alt="{{ item.NAME }}" class="publication__img">
+            </picture>
+            <div class="publication__description">
+                <div class="publication__title">
+                    {{ item.NAME }}
+                </div>
+                <dl class="publication__properties">
+                    {% for prop in item.DISPLAY_PROPERTIES %}
+                        <dt class="publication__properties-name">
+                            {{ prop.NAME }}
+                        </dt>
+                        <dd class="publication__properties-value">
+                            {{ prop.VALUE }}
+                        </dd>
+                    {% endfor %}
+                </dl>
+            </div>
+        </a>
+    {% endfor %}
+    <div class="publication__pagination">
+        {{ result.NAV_STRING }}
+    </div>
+</section>

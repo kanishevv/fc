@@ -1,0 +1,11 @@
+<div class="footer-sitemap">
+	<ul class="footer-sitemap__list">
+		{% for item in result.arMap %}
+			{% if item.PARAMS.top not in "Y" %}
+				<li class="footer-sitemap__item">
+					<a href="{{item.FULL_PATH}}" class="footer-sitemap__link">{{item.NAME}} {{item.PARAMS.top}}</a>
+				</li>
+			{% endif %}
+		{% endfor %}
+	</ul>
+</div>

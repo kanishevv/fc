@@ -1,0 +1,19 @@
+.search {
+  width: 100%;
+  height: auto;
+  // background: linear-gradient(0deg, #315a7b, #315a7b);
+  // padding: 32px 0 24px 0;
+
+  &__container {
+    background: linear-gradient(0deg, #315a7b, #315a7b);
+    padding: 20px 24px;
+  }
+
+  &__title {
+    font-size: 14px;
+    line-height: 19px;
+    text-transform: uppercase;
+    color: #fff;
+    margin-bottom: 16px;
+  }
+}

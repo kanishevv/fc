@@ -1,0 +1,195 @@
+User-Agent: *
+Sitemap: https://fcoz.ru/sitemap.xml
+Host: https://fcoz.ru
+
+Disallow: */index.php
+
+Disallow: /*action=
+
+Disallow: /*print=
+
+Disallow: /*/gallery/*order=
+
+Disallow: /*/search/
+
+Disallow: /*/slide_show/
+
+Disallow: /*?utm_source=
+
+Disallow: /*ADD_TO_COMPARE_LIST
+
+Disallow: /*arrFilter=
+
+Disallow: /*auth=
+
+Disallow: /*back_url_admin=
+
+Disallow: /*BACK_URL=
+
+Disallow: /*back_url=
+
+Disallow: /*backurl=
+
+Disallow: /*bitrix_*=
+
+Disallow: /*bitrix_include_areas=
+
+Disallow: /*building_directory=
+
+Disallow: /*bxajaxid=
+
+Disallow: /*change_password=
+
+Disallow: /*clear_cache_session=
+
+Disallow: /*clear_cache=
+
+Disallow: /*count=
+
+Disallow: /*COURSE_ID=
+
+Disallow: /*forgot_password=
+
+Disallow: /*ID=
+
+Disallow: /*index.php$
+
+Disallow: /*login=
+
+Disallow: /*logout=
+
+Disallow: /*modern-repair/$
+
+Disallow: /*MUL_MODE=
+
+Disallow: /*ORDER_BY
+
+Disallow: /*PAGE_NAME=
+
+Disallow: /*PAGE_NAME=detail_slide_show
+
+Disallow: /*PAGE_NAME=search
+
+Disallow: /*PAGE_NAME=user_post
+
+Disallow: /*PAGEN_
+
+Disallow: /*print_course=
+
+Disallow: /*print=
+
+Disallow: /*q=
+
+Disallow: /*register=
+
+Disallow: /*register=yes
+
+Disallow: /*set_filter=
+
+Disallow: /*show_all=
+
+Disallow: /*show_include_exec_time=
+
+Disallow: /*show_page_exec_time=
+
+Disallow: /*show_sql_stat=
+
+Disallow: /*SHOWALL_
+
+Disallow: /*sort=
+
+Disallow: /*sphrase_id=
+
+Disallow: /*tags=
+
+Disallow: /access.log
+
+Disallow: /admin
+
+Disallow: /api
+
+Disallow: /auth
+
+Disallow: /auth.php
+
+Disallow: /auto
+
+Disallow: /bitrix
+
+Disallow: /bitrix/
+
+Disallow: /cgi-bin
+
+Disallow: /club/$
+
+Disallow: /club/forum/search/
+
+Disallow: /club/gallery/tags/
+
+Disallow: /club/group/search/
+
+Disallow: /club/log/
+
+Disallow: /club/messages/
+
+Disallow: /club/search/
+
+Disallow: /communication/blog/search.php
+
+Disallow: /communication/forum/search/
+
+Disallow: /communication/forum/user/
+
+Disallow: /content/board/my/
+
+Disallow: /content/links/my/
+
+Disallow: /error
+
+Disallow: /e-store/affiliates/
+
+Disallow: /e-store/paid/detail.php
+
+Disallow: /examples/download/download_private/
+
+Disallow: /examples/my-components/
+
+Disallow: /include
+
+Disallow: /personal
+
+Disallow: /search
+
+Disallow: /temp
+
+Disallow: /tmp
+
+Disallow: /upload
+
+Disallow: /*/*ELEMENT_CODE=
+
+Disallow: /*/*SECTION_CODE=
+
+Disallow: /*/*IBLOCK_CODE
+
+Disallow: /*/*ELEMENT_ID=
+
+Disallow: /*/*SECTION_ID=
+
+Disallow: /*/*IBLOCK_ID=
+
+Disallow: /*/*CODE=
+
+Disallow: /*/*ID=
+
+Disallow: /*/*IBLOCK_EXTERNAL_ID=
+
+Disallow: /*/*SECTION_CODE_PATH=
+
+Disallow: /*/*EXTERNAL_ID=
+
+Disallow: /*/*IBLOCK_TYPE_ID=
+
+Disallow: /*/*SITE_DIR=
+
+Disallow: /*/*SERVER_NAME=

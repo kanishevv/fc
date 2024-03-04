@@ -1,0 +1,148 @@
+.employee-big {
+  &__cards {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  &__card {
+    display: flex;
+    padding: 16px;
+  }
+
+  &__pic {
+    margin-right: 16px;
+    max-width: 189px;
+    max-height: 268px;
+
+    img {
+      max-width: 189px;
+      max-height: 268px;
+    }
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 12px 0 0;
+  }
+
+  &__title {
+    font-family: PT Serif, serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 32px;
+    color: #315A7B;
+  }
+
+  &__position {
+    font-size: 16px;
+    line-height: 22px;
+    color: #CDD2DA;
+    margin-top: 8px;
+  }
+
+  &__contacts {
+    margin-top: 16px;
+    font-size: 14px;
+    line-height: 22px;
+    color: #000000;
+  }
+
+  &--blue {
+    .employee-big__card {
+      background: #E5EEF5;
+    }
+
+    .employee-big__position {
+      margin-top: 4px;
+      font-size: 14px;
+      line-height: 22px;
+      color: #627084;
+    }
+  }
+
+  &--light {
+    .employee-big__card {
+      background: #F7FBFF;
+    }
+
+    .employee-big__position {
+      margin-top: 4px;
+      font-size: 14px;
+      line-height: 22px;
+      color: #627084;
+    }
+  }
+}
+
+.employee-card {
+  &__cards {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__card {
+    padding: 16px;
+    margin-top: 16px;
+    margin-right: 16px;
+    width: calc(50% - 8px);
+    border-radius: 2px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &__title {
+    font-family: PT Serif, serif;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 24px;
+    color: #3E4A5B;
+    margin-top: 12px;
+  }
+
+  &__position {
+    margin-top: 4px;
+    font-size: 14px;
+    line-height: 22px;
+    color: #627084;
+  }
+
+  &__contacts {
+    font-size: 14px;
+    line-height: 22px;
+    color: #3E4A5B;
+    margin-top: 16px;
+  }
+
+  &--blue {
+    .employee-card__card {
+      background: #E5EEF5;
+    }
+  }
+
+  &--light {
+    .employee-card__card {
+      background: #F7FBFF;
+    }
+  }
+}
+
+@include media-breakpoint-down(md) {
+  .employee-big {
+    &__card {
+      flex-direction: column;
+    }
+  }
+
+  .employee-card {
+    &__card {
+      width: 100%;
+      margin-right: 0;
+    }
+  }
+}

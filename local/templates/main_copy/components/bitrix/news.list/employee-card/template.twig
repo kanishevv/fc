@@ -1,0 +1,47 @@
+<div class="employee-card employee-card--{{ params.THEME }}">
+    <div class="employee-card__cards">
+        {% for item in result.ITEMS %}
+            <div class="employee-card__card" {% if item.EDIT %} {{ item.EDIT}} {% endif %}>
+                <div class="employee-card__body">
+                    {% if item["~NAME"] %}
+                        <div class="employee-card__title">
+                            {{ item["~NAME"] }}
+                        </div>
+                    {% endif %}
+
+                    {% if item.PROPERTIES.POSITION.VALUE %}
+                        <div class="employee-card__position">
+                            {{ item.PROPERTIES.POSITION.VALUE }}
+                        </div>
+                    {% endif %}
+
+                    {% if item.PROPERTIES.ACADEMIC_DEGREE.VALUE %}
+                        <div class="employee-card__position">
+                            {{ item.PROPERTIES.ACADEMIC_DEGREE.VALUE }}
+                        </div>
+                    {% endif %}
+
+                    <div class="employee-card__contacts">
+                        {% if item.PROPERTIES.PHONE.VALUE %}
+                            <div class="employee-card__phone">
+                                <span>Тел.:</span>
+                                <a href="tel:{{ item.PROPERTIES.PHONE.FORMATTED }}">
+                                    {{ item.PROPERTIES.PHONE.VALUE }}
+                                </a>
+                            </div>
+                        {% endif %}
+
+                        {% if item.PROPERTIES.EMAIL.VALUE %}
+                            <div class="employee-card__email">
+                                <span>E-mail:</span>
+                                <a href="mailto:{{ item.PROPERTIES.EMAIL.VALUE }}">
+                                    {{ item.PROPERTIES.EMAIL.VALUE }}
+                                </a>
+                            </div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>

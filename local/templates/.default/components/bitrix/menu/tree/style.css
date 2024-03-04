@@ -1,0 +1,118 @@
+div.menu-sitemap-tree
+{
+	font-size:100%;
+}
+
+div.menu-sitemap-tree ul {
+	border: 1px solid #EFF2F5;
+	border-radius: 2px;
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+div.menu-sitemap-tree ul ul
+{
+	width: auto;
+	margin:-0.75em 0 0 0;
+	padding: 0 0 0 0.75em;
+}
+
+div.menu-sitemap-tree li
+{
+	margin: 0 0 -0.85em 0;
+	padding:0;
+}
+
+div.menu-sitemap-tree li li
+{
+	margin: 0 0 -0.85em 0.5em;
+	padding:0;
+}
+
+div.menu-sitemap-tree li.menu-close ul
+{
+	display: none;
+}
+
+div.menu-sitemap-tree div.item-text
+{
+	position:relative;
+	top:-19px;left:19px;
+}
+
+/*Icons*/
+div.folder, div.page
+{
+	background-repeat:no-repeat;
+	width:17px;
+	height:17px;
+	vertical-align:top;
+}
+div.folder{cursor:pointer; cursor: hand;background-image:url(images/folder_open.gif);}
+div.menu-sitemap-tree li.menu-close div.folder{background-image:url(images/folder_close.gif);}
+div.page{background-image:url(images/page.gif);}
+
+div.menu-sitemap-tree li.menu-close div.folder {
+	display: block;
+	margin-right: 16px;
+	width: 24px;
+	height: 24px;
+	background-image: url(/local/templates/.default/components/bitrix/menu/tree/images/arrow_right.svg);
+}
+
+div.menu-sitemap-tree li.menu-open .menu-close div.folder {
+	display: block;
+	margin-right: 16px;
+	width: 24px;
+	height: 24px;
+	background-image: url(/local/templates/.default/components/bitrix/menu/tree/images/arrow_right.svg);
+}
+
+div.menu-sitemap-tree li.menu-open div.folder {
+	display: block;
+	margin-right: 16px;
+	width: 24px;
+	height: 24px;
+	background-image: url(/local/templates/.default/components/bitrix/menu/tree/images/arrow_right_open.svg);
+	margin-top: auto;
+	margin-bottom: auto;
+}
+
+div.menu-sitemap-tree li.menu-open li.menu-open div.folder {
+	display: block;
+	margin-right: 16px;
+	width: 24px;
+	height: 24px;
+	background-image: url(/local/templates/.default/components/bitrix/menu/tree/images/arrow_right_open.svg);
+	margin-top: auto;
+	margin-bottom: auto;
+}
+
+.menu-sitemap-tree .menu-open {
+	background: #E8EFF4;
+}
+
+li.menu-open ul {
+	background: white;
+}
+
+.menu-sitemap-tree .menu-open .item-text.item-text-open {padding-bottom: 26px;}
+
+.item-border {
+	background: #EFF2F5;
+	height: 1px;
+}
+
+.menu-sitemap-tree li.menu-open ul li .item-border {
+	margin-left: -24px;
+}
+
+.menu-sitemap-tree .wrapper-container-level.menu-open .wrapper-container-level.menu-open a {
+	width: 83%;
+}
+
+.menu-sitemap-tree .wrapper-container-level.menu-open .wrapper-container-level.menu-open ul a {
+	padding-left: 80px;
+	width: auto;
+}

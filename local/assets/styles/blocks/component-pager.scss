@@ -1,0 +1,119 @@
+.component-pager {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__cont {
+    display: flex;
+    box-sizing: border-box;
+    border-radius: 2px;
+    max-height: 40px;
+  }
+
+  &__cont:not(.search-form) {
+    border: 1px solid #E0E6EB;
+  }
+
+  &--standard {
+    padding: 16px 0;
+    //max-height: 72px;
+  }
+
+  &__page-button {
+    padding: 10px 12px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    color: #414D5D;
+    box-sizing: border-box;
+    border-right: 1px solid #E0E6EB;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+
+    &--selected {
+      background: #315A7B;
+      color: #fff;
+    }
+
+    &:hover {
+      background: #315A7B;
+      color: #fff;
+    }
+
+    &:last-child {
+      border-right: none;
+    }
+  }
+
+  &__page-icon {
+    width: 20px;
+    height: 20px;
+  }
+
+  &__go-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+    background: #315A7B;
+    box-sizing: border-box;
+    border: none;
+    border-radius: 0 2px 2px 0;
+    color: #fff;
+    width: 40px;
+    cursor: pointer;
+
+    &:hover {
+      -webkit-box-shadow: 0px -1px 8px 0px rgba(34, 60, 80, 0.2);
+      -moz-box-shadow: 0px -1px 8px 0px rgba(34, 60, 80, 0.2);
+      box-shadow: 0px -1px 8px 0px rgba(34, 60, 80, 0.2);
+    }
+
+    .icon {
+      width: 12px;
+      height: 12px;
+    }
+  }
+
+  &__num-wrapper {
+    height: 40px;
+    box-sizing: border-box;
+    background: none;
+    border: none !important;
+
+    input {
+      line-height: 22px;
+      font-size: 14px;
+      color: #aaafb7 !important;
+      background: #fff;
+      border: 1px solid #dae0ea;
+    }
+  }
+}
+
+@include media-breakpoint-down(md) {
+  .component-pager {
+    &--standard {
+      margin: 0 10px;
+      flex-wrap: wrap;
+    }
+
+    &__page-button {
+      padding: 10px 10px;
+    }
+
+    &__page-button-ex {
+      display: none;
+    }
+
+    &__cont {
+      margin-top: 10px;
+
+      &:first-child {
+        margin-top: 0;
+      }
+    }
+  }
+}

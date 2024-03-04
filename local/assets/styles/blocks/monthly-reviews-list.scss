@@ -1,0 +1,27 @@
+.monthly-reviews-list {
+  font-family: PT Serif, serif;
+  font-size: 15px;
+  text-align: justify;
+
+  b, i, p {
+    font-size: 15px;
+  }
+
+  p {
+    text-indent: 20px;
+  }
+
+  b {
+    font-weight: 600;
+    font-size: 16px;
+    color: #212c3c;
+  }
+
+  p[align=center] {
+    text-align: center;
+  }
+
+  hr {
+    margin: 16px 0;
+  }
+}

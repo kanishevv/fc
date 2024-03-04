@@ -1,0 +1,56 @@
+<div class="search-result">
+	{% if result.ITEMS is not empty %}
+		<div class="search-result__col faq-page__col--left">
+			<div class="search-result__wrap">
+				<div class="search-result__list">
+					{% for item in result.ITEMS %}
+						<a href="{{ item.DETAIL_PAGE_URL }}" class="search-result__item">
+							<div class="search-result__item-title">{{ item.PREVIEW_TEXT }}</div>
+							<div class="search-result__item-description">{{ item.DETAIL_TEXT }}</div>
+						</a>
+					{% endfor %}
+				</div>
+				{% if result.NavPageNomer is not null %}
+					<div class="search-result__pagination">
+						<div class="pagination">
+							<a href="{{ result.URL ~ '&' ~ result.NAV_RESULT.NavQueryString ~ 'PAGEN_' ~ result.NAV_RESULT.NavNum ~ '=' ~ (result.NAV_RESULT.NavPageNomer - 1) }}" class="pagination__prev">
+								<svg class="pagination__icon icon">
+									<use xlink:href="{{ params.ASSETS }}#arrow_left"></use>
+								</svg>
+							</a>
+							{% for i in result.NAV_RESULT.nStartPage..result.NAV_RESULT.nEndPage %}
+								<a href="{{ result.URL ~ '&' ~ result.NAV_RESULT.NavQueryString ~ 'PAGEN_' ~ result.NAV_RESULT.NavNum ~ '=' ~ i }}" class="pagination__item{{ result.NAV_RESULT.NavPageNomer == i ? ' pagination__item_is-current' }}">{{ i }}</a>
+							{% endfor %}
+							<a href="{{ result.URL ~ '&' ~ result.NAV_RESULT.NavQueryString ~ 'PAGEN_' ~ result.NAV_RESULT.NavNum ~ '=' ~ (result.NAV_RESULT.NavPageNomer + 1) }}" class="pagination__next">
+								<svg class="pagination__icon icon">
+									<use xlink:href="{{ params.ASSETS }}#arrow_right"></use>
+								</svg>
+							</a>
+						</div>
+					</div>
+				{% endif %}
+			</div>
+		</div>
+		<div class="search-result__col search-result__col--right">
+			<div class="search-result__wrap">
+			{% if result.RUBRICS is not empty %}
+				<form action="{{ result.FORM_ACTION }}" class="search-form js-search-form-filter">
+					{# <input type="text" name="q" value="{{ result.REQUEST.QUERY }}" hidden/> #}
+					{# <input type="text" name="ajax" value="Y" hidden/> #}
+					<div class="search-form__title">Рубрики:</div>
+					<ul class="search-form-rubrics">
+						{% for rubric in result.RUBRICS %}
+							<li class="search-form-rubrics__item">
+								<input class="search-form-rubrics__checkbox checkbox" id="{{ rubric.ID }}" data-xml-id="{{ rubric.XML_ID }}" name="search_filter[{{ rubric.XML_ID }}]" type="checkbox" value="" {% if rubric.XML_ID in params.FILTER|keys %} checked {% endif %}>
+								<label for="{{ rubric.ID }}">
+									<span>{{ rubric.NAME }}</span>
+								</label>
+							</li>
+						{% endfor %}
+					</ul>
+				</form>
+			{% endif %}
+			</div>
+		</div>
+	{% endif %}
+</div>

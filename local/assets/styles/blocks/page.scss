@@ -1,0 +1,145 @@
+.page {
+  &__top {
+    background: #fff;
+  }
+
+  &__middle {
+    // margin: 0 auto;
+    // width: $screen-xl;
+  }
+
+  &__content--search-result .search-result__row {
+    padding: 24px 0px;
+  }
+
+  &__content {
+    border-radius: 2px;
+    //box-shadow: 0 2px 8px 0 #d2d2d2;
+    margin: 0 0 10px 0;
+    // padding: 10px 50px;
+
+    &--search-result {
+      padding: 0;
+      border: none;
+      background: none;
+    }
+
+    &--extended-search {
+      margin-top: 24px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 16px;
+    // padding: 40px 0;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 24px;
+    text-align: center;
+    color: #414D5D;
+  }
+
+  &__subtitle {
+    padding: 16px 0;
+    text-align: center;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 24px;
+    color: #3e4a5b;
+  }
+
+  &_secondary &__container {
+  }
+
+  &__bottom {
+    background: #ebebeb;
+  }
+
+  &_secondary {
+    p {
+      font-size: 14px;
+      line-height: 22px;
+      color: #212c3c;
+      margin: 0;
+    }
+
+    b {
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 22px;
+      color: #264359;
+    }
+
+    hr {
+      background: #e6eaef;
+      margin: 24px 0px;
+      height: 1px;
+      border: none;
+    }
+  }
+}
+
+.page-ul-list {
+  list-style: none;
+  font-size: 14px;
+  line-height: 22px;
+  color: #48566a;
+
+  &--no-padding {
+    padding: 0;
+  }
+
+  &--dash {
+    li:before {
+      content: "—";
+      position: relative;
+      left: -5px;
+    }
+  }
+}
+
+.col2 {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+
+  li {
+    display: block;
+    float: left;
+    width: 50%;
+  }
+
+  &.page-list.page-list--links {
+    padding-top: 16px;
+  }
+}
+
+.owl-dots {
+  display: none;
+}
+
+.main-page-categories__picture {
+  max-height: 160px;
+}
+
+.owl-prev {
+  position: absolute;
+  top: 25%;
+  left: 0;
+  width: 20px;
+  height: 50px;
+  background: #e0e4eb !important;
+}
+
+.owl-next {
+  position: absolute;
+  top: 25%;
+  right: 0;
+  width: 20px;
+  height: 50px;
+  background: #e0e4eb !important;
+}
+
+.owl-stage-outer {
+  margin-top: -40px;
+}

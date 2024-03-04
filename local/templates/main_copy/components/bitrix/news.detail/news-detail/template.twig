@@ -1,0 +1,117 @@
+<div class="search-result">
+    <div class="search-result__row">
+        <a href="javascript:history.back()" class="search-result__back-link">
+            <svg class="search-result__back-icon icon">
+                <use xlink:href="{{ params.ASSETS ~ '#arrow_back' }}"></use>
+            </svg>
+            <span>Вернуться</span>
+        </a>
+    </div>
+    <div class="{% if result.PROPERTIES.HIDE_DOCUMENT_REFERENCE.VALUE != 1 %} search-result__col  search-result__col--left {% else %} search-result__row {% endif %}">
+        <div class="search-result__wrap">
+            <div class="search-result__detail 123">
+                {% if result.PROPERTIES.STATUS.VALUE %}
+                    <div class="search-result__status search-result__info-value--red">
+                        {{ result.PROPERTIES.STATUS.VALUE }}
+                    </div>
+                {% endif %}
+
+                {% if params.PREVIEW_FIRST == "Y" %}
+                    <div class="search-result__preview-text">
+                        {{ result.PREVIEW_TEXT ~ "<br/>" }}
+                    </div>
+                {% endif %}
+
+                {% if result.TITLE and params.NO_TITLE != "Y" %}
+                    <h1 class="page__title">
+                        {{ result.TITLE }}
+                    </h1>
+                {% endif %}
+                {% if result.DETAIL_TEXT %}
+                    {{ result.DETAIL_TEXT }}
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    {% if result.PROPERTIES.HIDE_DOCUMENT_REFERENCE.VALUE != 1 %}
+        <div class="search-result__col search-result__col--right">
+            <div class="search-result__wrap">
+                <div class="search-result__info info-rows-open">
+                    <div class="search-result__info-caption">
+                        <div class="search-result__info-caption-title">Справка документа</div>
+                        <div class="search-result__info-caption-icon">
+                            <img src="/local/assets/icons/arrow_document_reference.svg">
+                            <img src="/local/assets/icons/arrow_document_reference_close.svg">
+                        </div>
+                    </div>
+
+                    {% if result.PROPERTIES.DATE_REG.VALUE %}
+                        <div class="search-result__info-row">
+                            <div class="search-result__info-title">Регистрация в Минюсте России:</div>
+                            <div class="search-result__info-value">
+                                {{ result.PROPERTIES.DATE_REG.VALUE
+                                ~ (result.PROPERTIES.NOMER_MIN.VALUE ? " №#{result.PROPERTIES.NOMER_MIN.VALUE}" : "") }}
+                            </div>
+                        </div>
+                    {% endif %}
+
+                    {% if result.PROPERTIES.IST.VALUE %}
+                        <div class="search-result__info-row">
+                            <div class="search-result__info-title">Источник публикации:</div>
+                            <div class="search-result__info-value">{{ result.PROPERTIES.IST["~VALUE"] }}</div>
+                        </div>
+                    {% endif %}
+
+                    {% if result.FILES %}
+                        <div class="search-result__info-row">
+                            <div class="search-result__info-title">Приложения:</div>
+                            <div class="search-result__info-value">
+                                {% for file in result.FILES %}
+                                    <a href="{{ file.SRC }}" target="_blank" class="search-result__info-link">
+                                        <svg class="search-result__info-icon icon">
+                                            <use xlink:href="{{ params.ASSETS ~ '#doc_link' }}"></use>
+                                        </svg>
+                                        <span class="search-result__file-title">{{ file.NAME }}</span>
+                                    </a>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    {% endif %}
+
+                    {% if result.RUBRIC %}
+                        <div class="search-result__info-row">
+                            <div class="search-result__info-title">Рубрики:</div>
+                            <div class="search-result__info-value">
+                                {% for r in result.RUBRIC %}
+                                    <a href="{{ r.HREF }}" class="search-result__info-link">
+                                        <span>{{ r.NAME }}</span>
+                                    </a>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    {% endif %}
+
+                    {% if result.NOTE %}
+                        <div class="search-result__info-row">
+                            <!--div class="search-result__info-title">Примечание:</div-->
+                            <div class="search-result__info-value">
+                                {{ result.NOTE }}
+                            </div>
+                        </div>
+                    {% endif %}
+
+                    {% if result.SECTION_LINK %}
+                        <div class="search-result__info-row">
+                            <div class="search-result__info-title">Тематика:</div>
+                                <div class="search-result__info-value">
+                                    {% for link in result.SECTION_LINK %}
+                                        {{ link }}
+                                    {% endfor %}
+                                </div>
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    {% endif %}
+</div>

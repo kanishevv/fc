@@ -1,0 +1,43 @@
+<section class="card {{ params.DATA_TYPE == 'DOC' ? 'card--articles documents' }}">
+    <div class="card__headline">
+        <div class="card__title">
+            <a href="{{ params.CARD_TITLE_HREF }}" class="card__title-link">{{ params.TITLE }}</a>
+        </div>
+        <div class="card__pagination"></div>
+    </div>
+    <div class="card__content">
+        <div class="card__list swiper-container">
+            <div class="card__list-wrapper swiper-wrapper">
+                {% for listRow in result.ITEMS|batch(5) %}
+                    <div class="card__list-item">
+                        {% for listItem in listRow %}
+                            <article class="article-short-preview">
+                                <div>
+                                    <div class="article-short-preview__title">
+                                        {{ listItem.PROPERTIES.DOCUMENT_TYPE.VALUE ~ '<br />' }}
+                                        {% if listItem.PROPERTIES.CREATOR.VALUE %}
+                                            {{ listItem.PROPERTIES.CREATOR.VALUE  ~ '<br />' }}
+                                        {% endif %}
+                                        {{ listItem.DATE_NUM_DOC }}
+                                    </div>
+                                    <div class="article-short-preview__description">{{ listItem.PREVIEW_TEXT }}</div>
+                                </div>
+                                <div class="article-short-preview__bottom">
+                                    {% if listItem.PUBLICATION_DATE %}
+                                        <time class="article-short-preview__time">
+                                            <svg class="article-short-preview__calendar-icon icon">
+                                                <use xlink:href="{{ params.ASSETS ~ '#calendar_date' }}"></use>
+                                            </svg>
+                                            <span class="article-short-preview__date-title">Дата опубликования:</span> {{ listItem.PUBLICATION_DATE }} г.
+                                        </time>
+                                    {% endif %}
+                                </div>
+                                <a href="{{ listItem.PROPERTIES.LINK.VALUE }}" target="_blank" class="article-short-preview__link"></a>
+                            </article>
+                        {% endfor %}
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>

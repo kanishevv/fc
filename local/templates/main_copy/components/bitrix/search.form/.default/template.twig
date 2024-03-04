@@ -1,0 +1,69 @@
+<form action="{{ result.FORM_ACTION }}" class="search-form">
+	<input name="where" value="" hidden/>
+	<div class="search-form__row">
+		<div class="search-form__result-wrap">
+			<div class="search-form__field">
+				<div class="search-form__input input input--search">
+					<svg class="input__icon icon">
+						<use xlink:href="{{ params.ICONS }}#search_loupe"></use>
+					</svg>
+					<div class="input__wrapper">
+						<input type="text" name="q" value="{{ _GET.q }}" size="15" maxlength="50" placeholder="Введите слово, фразу, номер документа"/>
+					</div>
+				</div>
+			</div>
+		</div>
+		<button class="search-form__submit button button--large">Найти</button>
+		{# <a class="search-form__rubricator js-toggle-filter">
+			<span>Показать рубрикатор</span>
+			<svg class="search-form__rubricator-icon icon">
+				<use xlink:href="{{ params.ICONS }}#arrow_down"></use>
+			</svg>
+		</a> #}
+	</div>
+	<div class="search-filter">
+		<div class="search-filter__row">
+			<div class="search-filter__title">Базы</div>
+			<div class="search-filter__tabs tabs tabs--light">
+				<a href="/search/?q=Право" class="tabs__item tabs__item_selected">
+					<span class="tabs-item__text">Все документы</span>
+				</a>
+				<a href="/search/?q=Право&amp;where=iblock_law_about_education" class="tabs__item">
+					<svg class="tabs__icon icon">
+						<use xlink:href="{{ params.ICONS }}#iblock_law_about_education"></use>
+					</svg>
+					<span class="tabs-item__text">Нормативно-правовые акты - 700</span>
+				</a>
+				<a href="/search/?q=Право&amp;where=iblock_practice" class="tabs__item ">
+					<svg class="tabs__icon icon">
+						<use xlink:href="{{ params.ICONS }}#iblock_practice"></use>
+					</svg>
+					<span class="tabs-item__text">Судебная практика - 200</span>
+				</a>
+				<a href="/search/?q=Право&amp;where=iblock_faq" class="tabs__item ">
+					<svg class="tabs__icon icon">
+						<use xlink:href="{{ params.ICONS }}#iblock_faq"></use>
+					</svg>
+					<span class="tabs-item__text">Вопросы и ответы - 200</span>
+				</a>
+			</div>
+		</div>
+		<div class="search-filter__row">
+			<div class="search-filter__title">Рубрики</div>
+			<div class="search-filter__categories">
+				<ul class="search-filter__list">
+					{% for rubric in result.RUBRICS %}
+						<li class="search-filter__item">
+							<a href="#" class="search-filter__item-link" data-rubric-id="{{ rubric.ID }}">
+								<img class="search-filter__item-icon icon" src="{{ rubric.ICON }}"/>
+								<span class="search-filter__item-text">{{ rubric.NAME }}</span>
+								<div class="flex-spacer"></div>
+								<span class="search-filter__item-count">200</span>
+							</a>
+						</li>
+					{% endfor %}
+				</ul>
+			</div>
+		</div>
+	</div>
+</form>

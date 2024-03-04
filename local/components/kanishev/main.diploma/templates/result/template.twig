@@ -1,0 +1,40 @@
+<div class="diploma diploma--standard">
+    <div class="diploma__content">
+        <div class="diploma__column">
+            <div class="diploma__title diploma__title--green {% if params.IS_NEED %} diploma__title--red {% endif %}">
+                {{ result.LOC.TITLE  }}
+            </div>
+
+            {% if result.TEXT %}
+                <div class="diploma__text">
+                    {{ result.TEXT }}
+                </div>
+            {% endif %}
+
+            {% if result.ELEMENT %}
+                <div class="diploma__btn-cont">
+                    <a href="/grazhdanam/priznanie-inostrannogo-obrazovaniya-v-rf/"
+                       class="js-diploma-link diploma__btn-return">
+                        {{ result.LOC.RETURN }}
+                    </a>
+                </div>
+            {% endif %}
+
+{#            <div class="diploma__dots">#}
+{#                <a class="diploma__dot diploma__dot--active"></a>#}
+{#            </div>#}
+        </div>
+
+        <div class="diploma__column diploma__column--justify-content-center">
+            {% if result.COUNTRY.PICTURE_SRC %}
+                <img class="diploma__icon" src="{{ result.COUNTRY.PICTURE_SRC }}" alt="{{ result.COUNTRY.NAME }}">
+            {% else %}
+                <svg class="diploma__icon">
+                    <use xlink:href="{{ result.ASSETS ~ "#document_gray" }}"></use>
+                </svg>
+            {% endif %}
+            <div class="diploma__country-name">{{ result.COUNTRY.NAME }}</div>
+        </div>
+
+    </div>
+</div>

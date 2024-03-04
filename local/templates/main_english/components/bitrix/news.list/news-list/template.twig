@@ -1,0 +1,33 @@
+<div class="news-list">
+	{% if result.ITEMS is not empty %}
+		<div class="news-list__list">
+			{% for item in result.ITEMS %}
+				<div class="news-list__item">
+					<a href="{{ item.DETAIL_PAGE_URL }}" class="news-list__link">
+						<div class="news-list__item-title">{{ item.NAME }}</div>
+						<div class="news-list__item-description">{{ item.PREVIEW_TEXT|striptags }}</div>
+					</a>
+				</div>
+			{% endfor %}
+		</div>
+		{% if result.NavPageNomer is not null %}
+			<div class="news-list__pagination">
+				<div class="pagination">
+					<a href="{{ result.URL ~ '&' ~ result.NAV_RESULT.NavQueryString ~ 'PAGEN_' ~ result.NAV_RESULT.NavNum ~ '=' ~ (result.NAV_RESULT.NavPageNomer - 1) }}" class="pagination__prev">
+						<svg class="pagination__icon icon">
+							<use xlink:href="{{ params.ASSETS }}#arrow_left"></use>
+						</svg>
+					</a>
+					{% for i in result.NAV_RESULT.nStartPage..result.NAV_RESULT.nEndPage %}
+						<a href="{{ result.URL ~ '&' ~ result.NAV_RESULT.NavQueryString ~ 'PAGEN_' ~ result.NAV_RESULT.NavNum ~ '=' ~ i }}" class="pagination__item{{ result.NAV_RESULT.NavPageNomer == i ? ' pagination__item_is-current' }}">{{ i }}</a>
+					{% endfor %}
+					<a href="{{ result.URL ~ '&' ~ result.NAV_RESULT.NavQueryString ~ 'PAGEN_' ~ result.NAV_RESULT.NavNum ~ '=' ~ (result.NAV_RESULT.NavPageNomer + 1) }}" class="pagination__next">
+						<svg class="pagination__icon icon">
+							<use xlink:href="{{ params.ASSETS }}#arrow_right"></use>
+						</svg>
+					</a>
+				</div>
+			</div>
+		{% endif %}
+	{% endif %}
+</div>

@@ -1,0 +1,37 @@
+<div class="publication">
+	{% for item in result.ITEMS %}
+		<a href="{{ item.DETAIL_PAGE_URL }}" class="publication__item">
+			​<picture class="publication__pic">
+				<img src="{{ item.PREVIEW_PICTURE.SRC }}" class="publication__img" alt="{{ item.PREVIEW_PICTURE.ALT }}">
+			</picture>
+			<div class="publication__description">
+				<div class="publication__title">{{ item.NAME }}</div>
+				<dl class="publication__properties">
+					{% for property in item.PROPERTIES %}
+						<dt class="publication__properties-name">{{ property.NAME }}</dt>
+						<dd class="publication__properties-value">{{ property.VALUE }}</dd>
+					{% endfor %}
+				</dl>
+			</div>
+		</a>
+	{% endfor %}
+	{% if result.NAV_RESULT.NavPageNomer is not null %}
+		<div class="publication__pagination">
+			<div class="pagination">
+				<a href="{{ result.URL ~ '?' ~ result.NAV_RESULT.NavQueryString ~ 'PAGEN_' ~ result.NAV_RESULT.NavNum ~ '=' ~ (result.NAV_RESULT.NavPageNomer - 1) }}" class="pagination__prev">
+					<svg class="pagination__icon icon">
+						<use xlink:href="{{ params.ASSETS }}#arrow_left"></use>
+					</svg>
+				</a>
+				{% for i in result.NAV_RESULT.nStartPage..result.NAV_RESULT.nEndPage %}
+					<a href="{{ result.URL ~ '?' ~ result.NAV_RESULT.NavQueryString ~ 'PAGEN_' ~ result.NAV_RESULT.NavNum ~ '=' ~ i }}" class="pagination__item{{ result.NAV_RESULT.NavPageNomer == i ? ' pagination__item_is-current' }}">{{ i }}</a>
+				{% endfor %}
+				<a href="{{ result.URL ~ '?' ~ result.NAV_RESULT.NavQueryString ~ 'PAGEN_' ~ result.NAV_RESULT.NavNum ~ '=' ~ (result.NAV_RESULT.NavPageNomer + 1) }}" class="pagination__next">
+					<svg class="pagination__icon icon">
+						<use xlink:href="{{ params.ASSETS }}#arrow_right"></use>
+					</svg>
+				</a>
+			</div>
+		</div>
+	{% endif %}
+</div>

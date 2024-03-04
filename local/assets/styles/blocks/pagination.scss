@@ -1,0 +1,36 @@
+.pagination {
+  display: flex;
+
+  &__item {
+    width: 32px;
+    height: 40px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    letter-spacing: 0.5px;
+    color: #48566a;
+  }
+
+  &__prev,
+  &__next {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__item_is-current {
+    width: 40px;
+    background: #f2f5f8;
+    border-radius: 2px;
+  }
+
+  &__icon {
+    width: 24px;
+    height: 24px;
+  }
+}

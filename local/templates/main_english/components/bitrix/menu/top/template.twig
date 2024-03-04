@@ -1,0 +1,31 @@
+<nav class="top-nav">
+	<ul class="top-nav__list top-nav__list_lvl-1">
+		{% for navItemKey, navItem in result.MENU_STRUCTURE %}
+			<li class="top-nav__item">
+				<a href="{{ result.ALL_ITEMS[navItemKey].LINK }}" class="top-nav__link {{ result.ALL_ITEMS[navItemKey].SELECTED ? 'top-nav__link_selected' }}">
+					{{ result.ALL_ITEMS[navItemKey].TEXT }}
+				</a>
+				{% if navItem[1] is iterable %}
+					<div class="top-nav__dropdown">
+						<div class="top-nav__title">{{ result.ALL_ITEMS[navItemKey].TEXT }}</div>
+						<ul class="top-nav__list top-nav__list_lvl-2">
+							{% for navItemLvlKey, navItemLvl in navItem[1] %}
+								<li class="top-nav__item">
+									<a href="{{ result.ALL_ITEMS[navItemLvlKey].LINK }}" class="top-nav__link {{ result.ALL_ITEMS[navItemLvlKey].SELECTED ? 'top-nav__link_selected' }}">
+										{{ result.ALL_ITEMS[navItemLvlKey].TEXT }}
+									</a>
+								</li>
+							{% endfor %}
+						</ul>
+					</div>
+				{% endif %}
+			</li>
+		{% endfor %}
+	</ul>
+	<div class="flex-spacer"></div>
+	<button class="top-nav__menu js-menu-toggle">
+		<svg class="top-nav__menu-icon icon">
+			<use xlink:href="{{ params.ASSETS ~ '#menu' }}"></use>
+		</svg>
+	</button>
+</nav>

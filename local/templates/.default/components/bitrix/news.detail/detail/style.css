@@ -1,0 +1,34 @@
+.right_detail {
+	padding: 20px 10px;
+}
+
+.right_detail img{
+	margin-top: 5px;
+	margin-bottom: -1px;
+	margin-left: 0px;
+}
+
+.right_detail h1{
+font-family: 'Arial',sans-serif;
+font-style: normal;
+font-weight: normal;
+font-size: 14px;
+line-height: 18px;
+text-align: center;
+margin-bottom: 16px;
+color: #333;}
+
+.infobl h1{
+text-transform: none!important;
+font-weight:bold!important;
+color:#707070;}
+
+.infobl a {
+    color: #1D7DDB;
+    text-decoration: none;
+}
+.infobl a:hover {
+    color: #1DA3DB;
+    text-decoration: underline;
+font-weight: nbold;
+}

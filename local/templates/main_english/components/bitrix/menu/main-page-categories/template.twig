@@ -1,0 +1,11 @@
+<div class="main-page__row main-page-categories">
+	{% for item in result %}
+		<div class="main-page-categories__item">
+			<picture class="main-page-categories__picture">
+				<img src="{{ item.PARAMS.img }}" alt="{{ item.TEXT }}" class="main-page-categories__img">
+			</picture>
+			<div class="main-page-categories__title">{{ item.TEXT }}</div>
+			<a href="{{ item.LINK }}" class="main-page-categories__link"></a>
+		</div>
+	{% endfor %}
+</div>

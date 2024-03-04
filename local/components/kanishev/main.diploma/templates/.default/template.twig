@@ -1,0 +1,25 @@
+<div class="diploma diploma--standard">
+    <div class="diploma__content">
+        <div class="diploma__column">
+            <div class="diploma__title">{{ result.LOC.TITLE }}</div>
+            <div class="diploma__select">
+                <select class="js-diploma-select">
+                    <option selected value="">{{ result.LOC.SELECT_COUNTRY }}</option>
+                    {% for country in result.COUNTRIES %}
+                        <option value="{{ country.URL }}">{{ country.NAME }}
+                        </option>
+                    {% endfor %}
+                </select>
+            </div>
+
+{#            <div class="diploma__dots">#}
+{#                <a class="diploma__dot diploma__dot--active"></a>#}
+{#            </div>#}
+        </div>
+        <div class="diploma__column diploma__column--justify-content-center">
+            <svg class="diploma__icon">
+                <use xlink:href="{{ result.ASSETS ~ "#document_gray" }}"></use>
+            </svg>
+        </div>
+    </div>
+</div>

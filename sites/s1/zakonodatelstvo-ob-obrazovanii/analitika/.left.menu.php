@@ -1,0 +1,25 @@
+<?
+$aMenuLinks = Array(
+	Array(
+		"Обзоры",
+		"/zakonodatelstvo-ob-obrazovanii/analitika/list.php?SECTION_ID=403",
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Статьи",
+		"/zakonodatelstvo-ob-obrazovanii/analitika/list.php?SECTION_ID=404",
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Исследования",
+		"/zakonodatelstvo-ob-obrazovanii/analitika/list.php?SECTION_ID=405",
+		Array(), 
+		Array(), 
+		"" 
+	),
+);
+?>

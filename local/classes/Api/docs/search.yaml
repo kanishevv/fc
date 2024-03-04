@@ -1,0 +1,69 @@
+swagger: "2.0"
+info:
+  version: "1.0.0"
+  title: "Search"
+host: "d1.fcoz-kanishev.extyl.pro"
+schemes:
+- "https"
+- "http"
+paths:
+  /api/index.php:
+    get:
+      parameters:
+      - name: "path"
+        in: "query"
+        type: "string"
+        required: true
+        default: "search"
+        description: ""
+      - name: "q"
+        in: "query"
+        type: "string"
+        description: "Текст для поиска"
+      - name: "iblockCode"
+        in: "query"
+        type: "string"
+        description: "Символьный код инфоблока"
+      - name: "section"
+        in: "query"
+        type: "integer"
+        description: "ID раздела инфоблока"
+      - name: "elementCount"
+        in: "query"
+        type: "integer"
+        default: 5
+        description: "Кол-во элементов на странице"
+      - name: "PAGEN_1"
+        in: "query"
+        type: "integer"
+        description: "Номер страницы"
+      - name: "name"
+        in: "query"
+        type: "string"
+        description: "Название элемента"
+      - name: "type"
+        in: "query"
+        type: "string"
+        description: "Тип документа"
+      - name: "acceptor"
+        in: "query"
+        type: "string"
+        description: "Принявший орган"
+      - name: "timeFrom"
+        in: "query"
+        type: "integer"
+        description: "Дата от (timestamp)"
+      - name: "timeTo"
+        in: "query"
+        type: "integer"
+        description: "Дата до (timestamp)"
+      - name: "rubric[]"
+        in: "query"
+        type: array
+        collectionFormat: multi
+        items:
+          type: string
+        description: "XML_ID рубрики"
+      responses:
+        "200":
+          description: "work"

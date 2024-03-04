@@ -1,0 +1,154 @@
+<section class="search-result">
+	<div class="search-result__row">
+		<div class="search-result__filter">
+			<div class="search-result__tabs tabs tabs--space-between">
+				<div class="tabs__cont">
+					<a href="{{ result.URL_TAB }}" class="tabs__item {{ result.NOT_MAIN_TAB != 1 ? ' tabs__item_selected' }}">
+						<span class="tabs-item__text">Найдено -
+							{{ result.COUNTS.ALL ?: 0 }}</span>
+					</a>
+					<a href="{{ result.URL_TAB ~ '&iblockCode=prav_base' }}" class="tabs__item{{ _GET.iblockCode == 'prav_base' ? ' tabs__item_selected' }}">
+						<svg class="tabs__icon icon">
+							<use xlink:href="{{ params.ASSETS ~ '#iblock_law_about_education' }}"></use>
+						</svg>
+						<span class="tabs-item__text">
+							База нормативных правовых актов -
+							{{ result.COUNTS[params.IBLOCKS.prav_base] ?: 0 }}
+						</span>
+					</a>
+					<a href="{{ result.URL_TAB ~ '&iblockCode=content_faq' }}" class="tabs__item{{ _GET.iblockCode == 'content_faq' ? ' tabs__item_selected' }}">
+						<svg class="tabs__icon icon">
+							<use xlink:href="{{ params.ASSETS ~ '#iblock_faq' }}"></use>
+						</svg>
+
+						<span class="tabs-item__text">База вопросов и ответов -
+							{{ result.COUNTS[params.IBLOCKS.content_faq] ?: 0 }}</span>
+					</a>
+					{# <a href="{{ result.URL_TAB ~ '&iblockCode=regional_base' }}" class="tabs__item{{ _GET.iblockCode == 'regional_base' ? ' tabs__item_selected' }}">
+						<svg class="tabs__icon icon">
+							<use xlink:href="{{ params.ASSETS ~ '#search-n' }}"></use>
+						</svg>
+						<span class="tabs-item__text">Региональная база -
+							{{ result.COUNTS[params.IBLOCKS['regional_base']] ?: 0 }}</span>
+					</a> #}
+					<a href="{{ result.URL_TAB ~ '&iblockCode=sudebnaya-praktika' }}" class="tabs__item{{ _GET.iblockCode == 'sudebnaya-praktika' ? ' tabs__item_selected' }}">
+						<svg class="tabs__icon icon">
+							<use xlink:href="{{ params.ASSETS ~ '#iblock_practice' }}"></use>
+						</svg>
+						<span class="tabs-item__text">База судебных актов -
+							{{ result.COUNTS[params.IBLOCKS['sudebnaya-praktika']] ?: 0 }}</span>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="search-result__col search-result__col--left">
+		<div class="search-result__wrap">
+			<div class="search-result__list">
+				{% if result.ITEMS is not empty %}
+					{% for item in result.ITEMS %}
+						<a href="{{ item.DETAIL_PAGE_URL }}" class="search-result__item search-result__item--flex" {% if item.EDIT_ELEMENT_ATTR %} {{ item.EDIT_ELEMENT_ATTR }} {% endif %}>
+							<div class="search-result__item-num">
+								<span>{{ item.POS }}</span>
+							</div>
+							<div class="search-result__item-cont">
+								<div class="search-result__item-title">{{ item.TITLE }}</div>
+
+								{% if item.DESCRIPTION %}
+									<div class="search-result__item-description">
+										{{ item.DESCRIPTION }}
+									</div>
+								{% endif %}
+
+								{% if item.DATE_PUBLICATION or item.RUBRICS %}
+									<div class="search-result__item-footer">
+										<div class="search-result__item-time">
+											<time class="article-short-preview__time">{{ item.DATE_PUBLICATION }}</time>
+										</div>
+										<div class="search-result__item-rubrics">
+											{% for rubric in  item.RUBRICS %}
+												<div class="search-result__item-rubric article-short-preview__rubric{{ ' article-short-preview__rubric--' ~ rubric.VALUE }}">
+													<svg class="article-short-preview__rubric-icon icon">
+														<use xlink:href="{{ params.ASSETS ~ '#clr_' ~ rubric.VALUE }}"></use>
+													</svg>
+													<span class="article-short-preview__rubric-text">
+														{{ rubric.NAME }}
+													</span>
+												</div>
+											{% endfor %}
+										</div>
+									</div>
+								{% endif %}
+							</div>
+						</a>
+					{% endfor %}
+				{% else %}
+					<div class="search-result__empty">
+						<svg class="search-result__empty-icon">
+							<use xlink:href="{{ params.ASSETS ~ '#search_empty' }}"></use>
+						</svg>
+						<div class="search-result__empty-title">Ничего не найдено</div>
+						<div class="search-result__empty-text">
+							Попробуйте изменить запрос или фильтрацию и попробуйте снова
+						</div>
+					</div>
+				{% endif %}
+			</div>
+		</div>
+
+		{% if result.NAV_STRING %}
+			{{ result.NAV_STRING }}
+		{% endif %}
+	</div>
+	<div class="search-result__col search-result__col--right">
+		<div class="search-result__wrap wrapper-rubrics-banners">
+			{% if result.RUBRICS is not empty %}
+				<div class="search-form__title search-form__title--no-margin js-accordion-trigger js-accordion-trigger-open" data-accordion="rubrics">Рубрики:</div>
+				<form id="configform" action="{{ result.FORM_ACTION }}" class="search-form js-search-form-filter js-accordion-data js-accordion-data-open" data-accordion="rubrics">
+					<ul class="search-form-rubrics">
+						{% for rubric in result.RUBRICS %}
+							<li class="search-form-rubrics__item">
+								<input class="search-form-rubrics__checkbox checkbox" id="{{ rubric.ID }}" data-xml-id="{{ rubric.XML_ID }}" name="rubric[{{ rubric.XML_ID }}]" type="checkbox" value="{{ rubric.XML_ID }}" {% if rubric.CHECKED %} checked {% endif %}>
+								<label for="{{ rubric.ID }}">
+									<span>{{ rubric.NAME }}</span>
+								</label>
+							</li>
+						{% endfor %}
+					</ul>
+					<div class="search-form__btn-wrapper">
+						<button class="search-form__btn-select" type="button">Выделить все</button>
+						<button class="search-form__btn-reset" type="reset" onclick="this.form.reset();">Сбросить</button>
+					</div>
+				</form>
+			{% endif %}
+		</div>
+
+		<div class="search-result__wrap right-side-banners">
+			<div class="right-side-banners__item">
+				<picture class="right-side-banners__picture">
+					<img src="/upload/images/regulations.png" class="right-side-banners__img" alt="">
+					<img src="/upload/images/documents.svg" class="right-side-banners__icon" alt="">
+				</picture>
+				<div class="right-side-banners__title">База нормативных правовых актов</div>
+				<a href="/extended-search/?LAST_FILTER=aFilterPrav" class="right-side-banners__link"></a>
+			</div>
+			<div class="right-side-banners__item">
+				<picture class="right-side-banners__picture">
+					<img src="/upload/images/questions-answers.png" class="right-side-banners__img" alt="">
+					<img src="/upload/images/question.svg" class="right-side-banners__icon" alt="">
+				</picture>
+				<div class="right-side-banners__title">База вопросов и ответов</div>
+				<a href="/extended-search/?LAST_FILTER=aFilterFaq" class="right-side-banners__link"></a>
+			</div>
+			<div class="right-side-banners__item">
+				<picture class="right-side-banners__picture">
+					<img src="/upload/images/judicial-acts.png" class="right-side-banners__img" alt="">
+					<img src="/upload/images/legal-scale.svg" class="right-side-banners__icon" alt="">
+				</picture>
+				<div class="right-side-banners__title">База судебных актов</div>
+				<a href="/extended-search/?LAST_FILTER=aFilterSud" class="right-side-banners__link"></a>
+			</div>
+		</div>
+
+	</div>
+</section>

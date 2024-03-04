@@ -1,0 +1,4 @@
+<?
+$MESS["LEARNING_COURSE_DESCRIPTION"] = "Introdução";
+$MESS["LEARNING_COURSE_TOC"] = "ndice";
+?>

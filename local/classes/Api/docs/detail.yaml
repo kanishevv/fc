@@ -1,0 +1,26 @@
+swagger: "2.0"
+info:
+  version: "1.0.0"
+  title: "Detail"
+host: "fcoz.ru"
+schemes:
+- "https"
+- "http"
+paths:
+  /api/index.php:
+    get:
+      parameters:
+      - name: "path"
+        in: "query"
+        type: "string"
+        required: true
+        default: "detail"
+        description: ""
+      - name: "id"
+        in: "query"
+        type: integer
+        required: true
+        description: "id элемента"
+      responses:
+        "200":
+          description: "work"

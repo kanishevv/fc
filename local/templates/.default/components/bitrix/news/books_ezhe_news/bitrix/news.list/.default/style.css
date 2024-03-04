@@ -1,0 +1,19 @@
+div.news-list img.preview_picture
+{
+	float:left;
+	margin:0 4px 6px 0;
+}
+.news-date-time {
+	color:#486DAA;
+}
+.news-list a {
+background: url('/images/icons/icon-e.png') 0 2px no-repeat;
+padding: 20px 0px 0px 40px;
+display: block;
+float:left;
+width: 97%;
+}
+.news-list {
+margin-left: 25px;
+margin-right: 25px;
+}

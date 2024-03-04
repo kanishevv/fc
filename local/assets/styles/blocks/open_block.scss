@@ -1,0 +1,42 @@
+.open_block {
+  margin: 16px 0 8px 0;
+  border: 1px solid #EFF2F5;
+  box-sizing: border-box;
+
+  .text {
+    border: none;
+    padding: 8px 12px 20px 12px;
+    background: #F8FAFC;
+  }
+
+  .title {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 12px;
+    font-family: Roboto, sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 24px;
+    color: #2E3238;
+    background-color: #E5EEF5;
+  }
+
+  .title.open:after {
+    content: "";
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    background: url('/sites/s1/images/arrow_top_dark.png') no-repeat center;
+    margin-left: 8px;
+  }
+
+  .title:after {
+    content: "";
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    background: url('/sites/s1/images/arrow_bottom_dark.png') no-repeat center;
+    margin-left: 8px;
+  }
+}

@@ -1,0 +1,61 @@
+<div class="diploma diploma--standard">
+    <div class="diploma__content">
+        <div class="diploma__column">
+            <div class="diploma__title">
+                {{ result.LOC.TITLE  }}
+            </div>
+
+            {% if result.SECTIONS %}
+                <div class="diploma__links">
+                    {% for section in result.SECTIONS %}
+                        <a href="{{ section.URL }}"
+                           class="diploma__link js-diploma-link">{{ section.NAME }}</a>
+                    {% endfor %}
+                </div>
+            {% endif %}
+
+            {% if result.SECTION.UF_DOCUMENT_LIST %}
+                <div class="diploma__documents">
+                    {% for document in result.SECTION.UF_DOCUMENT_LIST %}
+                        <div class="diploma__document">
+                            <a class="js-diploma-link"
+                               href="ajax.php?COUNTRY={{ result.COUNTRY.ID }}&SECTION={{ result.SECTION.ID }}&RESULT=0">
+                                {{ document }}
+                            </a>
+                        </div>
+                    {% endfor %}
+                </div>
+                <div class="diploma__links mt-16">
+                    <a href="ajax.php?COUNTRY={{ result.COUNTRY.ID }}&SECTION={{ result.SECTION.ID }}&RESULT=1"
+                       class="diploma__link js-diploma-link">Нет в списке</a>
+                </div>
+            {% endif %}
+
+            {% if result.SECTION.UF_NOTE %}
+                <div class="diploma__documents">
+                    <div class="diploma__document diploma__document--black">
+                        {{ result.SECTION.UF_NOTE }}
+                    </div>
+                </div>
+            {% endif %}
+
+{#            <div class="diploma__dots">#}
+{#                {% for i in 0..result.SECTION.DEPTH_LEVEL %}#}
+{#                    <a class="diploma__dot {% if loop.last %} diploma__dot--active {% endif %}"></a>#}
+{#                {% endfor %}#}
+{#            </div>#}
+        </div>
+
+        <div class="diploma__column diploma__column--justify-content-center">
+            {% if result.COUNTRY.PICTURE_SRC %}
+                <img class="diploma__icon" src="{{ result.COUNTRY.PICTURE_SRC }}" alt="{{ result.COUNTRY.NAME }}">
+            {% else %}
+                <svg class="diploma__icon">
+                    <use xlink:href="{{ result.ASSETS ~ "#document_gray" }}"></use>
+                </svg>
+            {% endif %}
+            <div class="diploma__country-name">{{ result.COUNTRY.NAME }}</div>
+        </div>
+
+    </div>
+</div>

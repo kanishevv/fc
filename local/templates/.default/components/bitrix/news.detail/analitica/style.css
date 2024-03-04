@@ -1,0 +1,16 @@
+.col12 .infobl {
+    width: 960px !important;
+}
+.col2 p {
+padding-top: 8px !important;
+}
+
+.col2 li {
+    margin-top: 0px !important;
+    margin-bottom: 0px !important;
+    list-style: square outside !important;
+    background-position: 0px 3px; !important;
+    background-repeat: no-repeat !important;
+    padding-left: 0px !important;
+    text-indent: initial;
+}

@@ -1,0 +1,25 @@
+swagger: "2.0"
+info:
+  version: "1.0.0"
+  title: "GetCategoryList"
+host: "fcoz.ru"
+schemes:
+- "https"
+- "http"
+paths:
+  /api/index.php:
+    get:
+      parameters:
+      - name: "path"
+        in: "query"
+        type: "string"
+        required: true
+        default: "getCategoryList"
+        description: ""
+      - name: "iblockCode"
+        in: "query"
+        type: "string"
+        description: "Символьный код инфоблока (prav_base or sudebnaya-praktika)"
+      responses:
+        "200":
+          description: "work"

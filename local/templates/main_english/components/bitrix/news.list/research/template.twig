@@ -1,0 +1,14 @@
+<div class="research">
+	<div class="research__list">
+		{% for item in result.ITEMS %}
+			<div class="research__item">
+				<a href="{{ item.DETAIL_PAGE_URL }}" class="research__link">
+					<svg class="research__icon icon">
+						<use xlink:href="{{ params.ASSETS ~ '#doc_icon' }}"></use>
+					</svg>
+					<span>{{ item.NAME }}</span>
+				</a>
+			</div>
+		{% endfor %}
+	</div>
+</div>

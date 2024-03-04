@@ -1,0 +1,12 @@
+.under a {
+padding-bottom: 2px;
+border-bottom: solid 1px #9ED1FF;
+}
+p {
+font-family: 'Arial', sans-serif;
+font-size: 13px!important;
+text-align: justify;
+text-indent: 20px;
+margin-bottom: 9px!important;
+display: block;
+}

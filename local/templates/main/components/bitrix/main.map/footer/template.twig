@@ -1,0 +1,15 @@
+<div class="footer-sitemap">
+	<ul class="footer-sitemap__list">
+		{% for item in result.arMap %}
+			{% for aMenu in aMenuLinks %}
+				<div>{{aMenu.3}}</div>
+			{% endfor %}
+			<li class="footer-sitemap__item">
+				<a href="{{item.FULL_PATH}}" class="footer-sitemap__link">{{item.NAME}} {{aMenu.3}}</a>
+			</li>
+		{% endfor %}
+		<li class="footer-sitemap__item">
+			<a href="/grazhdanam/dohodi/" class="footer-sitemap__link">Противодействие коррупции</a>
+		</li>
+	</ul>
+</div>

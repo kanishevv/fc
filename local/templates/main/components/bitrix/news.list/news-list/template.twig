@@ -1,0 +1,26 @@
+<div class="news-list">
+	{% if result.ITEMS is not empty %}
+		<div class="news-list__list">
+			{% for item in result.ITEMS %}
+				<div class="news-list__item">
+					<a href="{{ item.PROPERTIES.URL.VALUE ?: item.DETAIL_PAGE_URL }}" class="news-list__link">
+					<div class="news-list__item-picture">
+					{% if item.PREVIEW_PICTURE.SRC %}
+						<picture class="article-short-preview__picture">
+							<img src="{{ item.PREVIEW_PICTURE.SRC }}" class="article-short-preview__img" alt="{{ item.PREVIEW_PICTURE.ALT }}">
+						</picture>
+					{% endif %}
+					</div>
+						<div class="news-list__item-content">
+							<div class="news-list__item-title">{{ item.NAME }}</div>
+							<div class="news-list__item-description">{{ item.PREVIEW_TEXT|striptags }}</div>
+						</div>
+					</a>
+				</div>
+			{% endfor %}
+		</div>
+		{% if params.DISPLAY_BOTTOM_PAGER == 'Y' %}
+			{{ result.NAV_STRING }}
+		{% endif %}
+	{% endif %}
+</div>

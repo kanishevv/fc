@@ -1,0 +1,161 @@
+.diploma {
+  &--standard {
+    margin-bottom: 16px;
+    background: #F8FAFC;
+    border: 1px solid #E6EAEF;
+    box-sizing: border-box;
+    border-radius: 2px;
+    padding: 24px;
+    min-height: 262px;
+    display: flex;
+    width: 100%;
+  }
+
+  &__title {
+    font-family: PT Serif, serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 26px;
+    margin-bottom: 20px;
+    color: #2E3238;
+
+    &--green {
+      color: #22c241;
+    }
+
+    &--red {
+      color: #DA4D4D;
+    }
+  }
+
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    flex-basis: inherit;
+    width: 100%;
+  }
+
+  &__icon {
+    width: 137.5px;
+    height: 137.5px;
+  }
+
+  &__select {
+    width: 397px;
+  }
+
+  &__links {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 16px;
+
+    :last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__link {
+    padding: 10px 16px;
+    border: 1px solid #DAE0EA;
+    box-sizing: border-box;
+    border-radius: 2px;
+    margin-bottom: 12px;
+    margin-right: auto;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.23px;
+    color: #2E3238;
+  }
+
+  &__country-name {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 24px;
+    color: #2E3238;
+    text-align: center;
+    margin-top: 12px;
+  }
+
+  &__document {
+    max-width: 592px;
+    font-size: 14px;
+    line-height: 22px;
+    color: #508CD3;
+
+    &--black {
+      color: #2E3238;
+    }
+  }
+
+  &__text {
+    font-size: 14px;
+    line-height: 22px;
+    color: #2E3238;
+    max-width: 592px;
+  }
+
+  &__btn-return {
+    display: inline-flex;
+    padding: 8px 32px;
+    margin-top: 16px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.23px;
+    color: #F8FAFC;
+    background: #315A7B;
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+  }
+
+  &__dots {
+    display: flex;
+    margin-top: auto;
+    margin-bottom: 0;
+    padding-top: 40px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &__dot {
+    width: 10px;
+    height: 10px;
+    background-color: rgba(224, 228, 235, 0.9);
+    border-radius: 50%;
+    margin-right: 8px;
+
+    &--active {
+      background-color: #2E3238;
+    }
+  }
+
+  &__column {
+    display: flex;
+    flex-direction: column;
+    height: inherit;
+
+    &--justify-content-center {
+      justify-content: center;
+    }
+  }
+}
+
+@include media-breakpoint-down(xs) {
+  .diploma__select {
+    width: 100%;
+    max-width: 397px;
+  }
+  .diploma__content {
+    flex-wrap: wrap;
+  }
+  .diploma__column--justify-content-center {
+    margin: 0 auto;
+  }
+}

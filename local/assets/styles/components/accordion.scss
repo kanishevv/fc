@@ -1,0 +1,20 @@
+.js-accordion-trigger {
+  background-origin:content-box;
+  background-image: url("/sites/s1/images/arrow_bottom_dark.png");
+  background-position-y: center;
+  background-position-x: right;
+  background-repeat: no-repeat;
+  cursor: pointer;
+
+  &-open {
+    background-image: url("/sites/s1/images/arrow_top_dark.png");
+  }
+}
+
+.js-accordion-data {
+  display: none;
+
+  &-open {
+    display: block;
+  }
+}

@@ -1,0 +1,62 @@
+<div class="search-result">
+    <div class="search-result__row">
+        <a href="javascript:history.back()" class="search-result__back-link">
+            <svg class="search-result__back-icon icon">
+                <use xlink:href="{{ params.ASSETS ~ '#arrow_back' }}"></use>
+            </svg>
+            <span>Вернуться к поиску</span>
+        </a>
+    </div>
+    <div class="search-result__col search-result__col--left">
+        <div class="search-result__wrap">
+            <div class="search-result__detail">
+                <div class="search-result__detail-question">
+                    <div class="search-result__detail-text">{{ result["~PREVIEW_TEXT"] }}</div>
+                </div>
+                <div class="search-result__detail-answer">
+                    <div class="search-result__detail-text">
+                        {% if result["~DETAIL_TEXT"] %}
+                            {{ result["~DETAIL_TEXT"] }}
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="search-result__col search-result__col--right">
+        <div class="search-result__wrap">
+            <div class="search-result__info info-rows-open">
+                <div class="search-result__info-caption">
+                    <div class="search-result__info-caption-title">Справка документа</div>
+                    <div class="search-result__info-caption-icon">
+                        <img src="/local/assets/icons/arrow_document_reference.svg">
+                        <img src="/local/assets/icons/arrow_document_reference_close.svg">
+                    </div>
+                </div>
+
+                {% if result.DATE_CHANGE %}
+                    <div class="search-result__info-row">
+                        <div class="search-result__info-title">Ответ дан по состоянию на:</div>
+                        <div class="search-result__info-value">
+                            <span>{{ result.DATE_CHANGE }}</span>
+                        </div>
+                    </div>
+                {% endif %}
+
+                {% if result.RUBRIC %}
+                    <div class="search-result__info-row">
+                        <div class="search-result__info-title">Рубрики:</div>
+                        <div class="search-result__info-value">
+                            {% for r in result.RUBRIC %}
+                                <a href="{{ r.HREF }}" class="search-result__info-link">
+                                    <span>{{ r.NAME }}</span>
+                                </a>
+                            {% endfor %}
+                        </div>
+                    </div>
+                {% endif %}
+
+            </div>
+        </div>
+    </div>
+</div>

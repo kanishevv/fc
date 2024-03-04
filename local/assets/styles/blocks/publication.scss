@@ -1,0 +1,50 @@
+.publication {
+  &__item {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 24px 0;
+    border-bottom: 1px solid #EFF2F5;
+
+    &:last-child {
+        border-bottom: unset;
+    }
+  }
+
+  &__pic {
+    width: 110px;
+    height: 162px;
+  }
+
+  &__img {
+    @include responsive-img;
+  }
+
+  &__description {
+    flex-basis: calc(100% - 134px);
+    margin-left: 24px;
+  }
+
+  &__title {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 22px;
+    color: #264359;
+    margin-bottom: 16px;
+  }
+
+  &__properties {
+    overflow: hidden;
+    font-size: 14px;
+    line-height: 22px;
+    color: #48566a;
+  }
+
+  &__properties-name {
+    float: left;
+    font-weight: 500;
+    margin-right: 5px;
+  }
+
+  &__properties-value {
+  }
+}

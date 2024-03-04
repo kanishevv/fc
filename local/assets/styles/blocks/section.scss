@@ -1,0 +1,18 @@
+.section-wrapper-container {
+  display: flex;
+  margin-bottom: 40px;
+
+  &-carousel {
+    margin-top: 60px;
+  }
+
+  &-content {
+    width: 100%;
+    background: #FFFFFF;
+    border: 1px solid #EFF2F5;
+    border-radius: 2px;
+    padding: 16px;
+    overflow: auto;
+    height: fit-content;
+  }
+}

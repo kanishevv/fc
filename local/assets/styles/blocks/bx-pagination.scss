@@ -1,0 +1,46 @@
+.bx-pagination .bx-pagination-container {
+  ul {
+    display: flex;
+    align-items: center;
+    max-height: 40px;
+
+    li {
+      display: flex;
+      align-items: center;
+      padding: 0px;
+      margin: 10px 0;
+    }
+
+    li a:hover span {
+      background: transparent;
+    }
+
+    li span {
+      font-family: Roboto;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 20px;
+      color: #414D5D;
+      background: transparent;
+      padding-top: 6px;
+    }
+
+    li.bx-active span {
+      background: #EAEFF4;
+      border-radius: 2px;
+      height: 40px;
+      width: 40px;
+      color: #414D5D;
+      padding-top: 10px;
+    }
+  }
+
+  .bx-pag-prev {
+    padding-top: 7px;
+  }
+
+  .bx-pag-next {
+    padding-top: 7px;
+  }
+}

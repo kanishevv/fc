@@ -1,0 +1,9 @@
+<div class="footer-sitemap">
+	<ul class="footer-sitemap__list">
+		{% for item in result.arMap %}
+			<li class="footer-sitemap__item">
+				<a href="{{item.FULL_PATH}}" class="footer-sitemap__link">{{item.NAME}}</a>
+			</li>
+		{% endfor %}
+	</ul>
+</div>

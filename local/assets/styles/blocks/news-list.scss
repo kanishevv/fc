@@ -1,0 +1,123 @@
+.news-list {
+  &__item {
+    position: relative;
+    display: block;
+    padding: 16px 0;
+    margin-bottom: 8px;
+    border-bottom: 1px solid #EFF2F5;
+
+    &:last-child {
+      border: unset;
+    }
+
+    a {
+      display: flex;
+    }
+
+    &-data {
+      font-style: normal;
+      font-weight: normal;
+      font-size: 14px;
+      line-height: 20px;
+      color: #758AA8;
+    }
+
+    &-picture {
+      flex-basis: 33%;
+      width: 33%;
+      margin-right: 20px;
+    }
+
+    &-content {
+      flex-basis: 66%;
+    }
+  }
+
+  &__item-title {
+    margin-bottom: 12px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 22px;
+    text-transform: uppercase;
+    color: #3E4A5B;
+  }
+
+  &__item-description {
+    font-size: 14px;
+    line-height: 22px;
+    color: #3E4A5B;
+    margin-bottom: 24px;
+  }
+
+  &-employee {
+    display: flex;
+    flex-wrap: wrap;
+
+    .custom-wrapper-container {
+      flex-basis: 25%;
+      margin-bottom: 25px;
+    }
+
+    .container-title {
+      font-family: PT Serif;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 18px;
+      line-height: 24px;
+      color: #3E4A5B;
+      margin-bottom: 8px;
+    }
+
+    .container-position {
+      font-family: Roboto;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 14px;
+      line-height: 22px;
+      color: #758AA8;
+      margin-bottom: 16px;
+      margin-right: 5px;
+    }
+
+    .container-phone {
+      font-family: Roboto;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 14px;
+      line-height: 22px;
+      color: #3E4A5B;
+    }
+
+    .container-email {
+      font-family: Roboto;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 14px;
+      line-height: 22px;
+      color: #3E4A5B;
+    }
+
+    .container-email span {
+      color: #508CD3;
+    }
+
+    .container-academic-degree {
+      font-family: Roboto;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 14px;
+      line-height: 22px;
+      color: #3E4A5B;
+    }
+  }
+}
+
+@include media-breakpoint-down(md) {
+  .news-list-employee {
+    flex-direction: column;
+  }
+
+  .custom-wrapper-container {
+    margin-bottom: 40px;
+  }
+}

@@ -1,0 +1,17 @@
+.search-form-rubrics {
+  padding: 16px 16px 0px;
+  margin: 0 0 24px 0;
+  list-style: none;
+
+  &__item {
+      padding: 6px 0;
+
+      &:first-child {
+          padding-top: 0;
+      }
+
+      &:last-child {
+          padding-bottom: 0;
+      }
+  }
+}

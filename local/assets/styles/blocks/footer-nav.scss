@@ -1,0 +1,33 @@
+.footer-nav {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  flex-basis: 100%;
+  padding: 10px 0 5px 0;
+
+  &:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 1px;
+    background-color: #B4C6D3;
+  }
+
+  &__link {
+    display: flex;
+    // padding: 40px 0;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 24px;
+    text-transform: uppercase;
+    color: #3E4A5B;
+    border-bottom: 1px solid rgba(255, 255, 255, 0);
+
+    &:hover {
+      color: #8C9CB3;
+      border-bottom: none;
+    }
+  }
+}

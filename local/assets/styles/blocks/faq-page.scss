@@ -1,0 +1,21 @@
+.faq-page {
+  display: flex;
+  flex-wrap: wrap;
+
+  &__col {
+    margin: 0 12px;
+    background: #fff;
+    padding: 24px;
+  }
+
+  &__col--left {
+    margin-left: 0;
+    flex-basis: calc(100% - 344px);
+  }
+
+  &__col--right {
+    width: 100%;
+    max-width: 320px;
+    margin-right: 0;
+  }
+}

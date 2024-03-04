@@ -1,0 +1,11 @@
+div.news-list img.preview_picture
+{
+	float:left;
+}
+.news-date-time {
+	color:#486DAA;
+}
+
+.infobl {
+    width: 960px!important;
+}

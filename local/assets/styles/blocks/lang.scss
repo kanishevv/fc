@@ -1,0 +1,68 @@
+.lang {
+    position: relative;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    background: #fff;
+    font-size: 14px;
+    line-height: 18px;
+
+    &__link span {
+        color: #48566a;
+    }
+
+    &:hover {
+        cursor: pointer;
+    }
+
+    &__selected,
+    &__link {
+        display: flex;
+        align-items: center;
+        padding: 0 12px;
+    }
+
+    &__selected-icon,
+    &__link-icon {
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        margin-right: 8px;
+    }
+
+    &__item {
+        display: flex;
+        align-items: center;
+        height: 56px;
+    }
+
+    &__selector {
+        display: none;
+        width: 100%;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        background: #fff;
+    }
+
+    &__selector--opened {
+        display: block;
+    }
+
+    &:hover &__selector {
+        display: block;
+    }
+}
+
+@include media-breakpoint-down(md) {
+  .lang {
+    &__link {
+      & > span {
+        display: none;
+      }
+    }
+  }
+}

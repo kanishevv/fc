@@ -1,0 +1,3 @@
+<a href="/">Rus</a><em>|</em><a class="act"  id="bxid_757398" href="/en" >Eng</a> &nbsp; <a href="https://www.facebook.com/pages/%D0%A4%D0%B5%D0%B4%D0%B5%D1%80%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9-%D1%86%D0%B5%D0%BD%D1%82%D1%80-%D0%BE%D0%B1%D1%80%D0%B0%D0%B7%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%BE%D0%B3%D0%BE-%D0%B7%D0%B0%D0%BA%D0%BE%D0%BD%D0%BE%D0%B4%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%D1%81%D1%82%D0%B2%D0%B0/115396378527488" > 
+  <div class="fb"></div>
+ </a>

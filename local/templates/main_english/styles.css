@@ -1,0 +1,178 @@
+/*.textleft {
+  font-size: 13px !important;
+  font-family: 'Arial', sans-serif;
+  font-weight: bold;
+  line-height: 12px;
+  text-indent: 20px;
+  text-align: left;
+  display: block;
+}
+.textright {
+  font-size: 13px !important;
+  font-family: 'Arial', sans-serif;
+  font-style: italic !important;
+  text-align: right !important;
+  display: block;
+}
+.textcenter {
+  text-align: center !important;
+  font-weight: bold !important;
+  display: block;
+  font-size: 13px !important;
+}
+.text {
+  font-family: 'Arial', sans-serif;
+  font-size: 13px !important;
+  text-indent: 20px !important;
+  display: block;
+}
+.textjust {
+  font-family: 'Arial', sans-serif;
+  font-size: 13px !important;
+  text-align: justify;
+  text-indent: 20px !important;
+  display: block;
+}
+.textjust2 {
+  font-family: 'Arial', sans-serif;
+  font-size: 13px !important;
+  text-align: justify;
+  display: block;
+}
+.textmar {
+  font-family: 'Arial', sans-serif;
+  font-size: 13px !important;
+  text-align: justify !important;
+  text-indent: 20px !important;
+  margin-top: 5px !important;
+  margin-bottom: 3px !important;
+  display: block;
+}
+
+.textcolor {
+  font-family: 'Arial', sans-serif !important;
+
+  color: #616290 !important;
+  display: block;
+}
+
+.table {
+}
+.table td {
+  border-collapse: collapse;
+  border: 1px double #b2b2b2 !important;
+  padding: 10px;
+}
+.table2 {
+  padding: 0 150px 0 150px;
+}
+.table2 td {
+  border-collapse: collapse;
+  border: 1px double #000;
+  padding: 10px;
+  width: 308px;
+}
+
+.soder {
+  font-family: 'Arial', sans-serif;
+  font-size: 13px !important;
+  text-align: left !important;
+  display: block;
+}
+
+.lisite {
+  background: url('//www.lexed.ru.opt-images.1c-bitrix-cdn.ru/images/icons/icon-k.png?14038823931555')
+    0px 2px no-repeat;
+  padding: 20px 0px 0px 48px;
+  min-height: 20px;
+  width: 90%;
+  margin-left: 25px;
+  margin-bottom: 10px;
+  border-bottom: solid 1px #ddd;
+  display: block;
+  float: left;
+}
+
+.lifz {
+  background: url('//www.lexed.ru.opt-images.1c-bitrix-cdn.ru/images/icons/icon-fz.png?14041277881631')
+    0px 2px no-repeat;
+  padding: 20px 0px 0px 48px;
+  min-height: 20px;
+  width: 90%;
+  margin-left: 25px;
+  margin-bottom: 10px;
+  border-bottom: solid 1px #ddd;
+  display: block;
+  float: left;
+}
+
+.lia {
+  background: url('//www.lexed.ru.opt-images.1c-bitrix-cdn.ru/images/icons/icon-a.png?14041434281561')
+    0px 2px no-repeat;
+  padding: 20px 0px 0px 48px !important;
+  min-height: 20px;
+  width: 90%;
+  margin-left: 25px;
+  margin-bottom: 10px;
+  border-bottom: solid 1px #ddd;
+  display: block;
+  float: left;
+}
+
+.lit {
+  background: url('//www.lexed.ru.opt-images.1c-bitrix-cdn.ru/images/icons/icon-t.png?14041434091470')
+    0px 2px no-repeat;
+  padding: 20px 0px 0px 48px;
+  display: block;
+  float: left;
+  min-height: 30px;
+  width: 93%;
+  margin-left: 25px;
+}
+
+.lio {
+  background: url('//www.lexed.ru.opt-images.1c-bitrix-cdn.ru/images/icons/icon-o.png?14048347461574')
+    0px 2px no-repeat;
+  padding: 20px 0px 0px 48px !important;
+  display: block;
+  float: left;
+  min-height: 30px;
+  width: 93%;
+  border-bottom: solid 1px #ddd;
+  margin-left: 25px;
+}
+
+.lib {
+  background: url('//www.lexed.ru.opt-images.1c-bitrix-cdn.ru/images/icons/icon-b.png?14048347461524')
+    0px 2px no-repeat;
+  padding: 20px 0px 0px 48px !important;
+  display: block;
+  float: left;
+  min-height: 30px;
+  width: 93%;
+  margin-left: 25px;
+}
+
+.lis {
+  background: url('//www.lexed.ru.opt-images.1c-bitrix-cdn.ru/images/icons/icon-s.png?14055119581570')
+    0px 2px no-repeat;
+  padding: 20px 0px 0px 48px !important;
+  min-height: 20px;
+  width: 80%;
+  margin-left: 25px;
+  margin-bottom: 10px;
+  border-bottom: solid 1px #ddd;
+  display: block;
+  float: left;
+}
+.limo {
+  background: url('//www.lexed.ru.opt-images.1c-bitrix-cdn.ru/images/icons/icon-o.png')
+    0px 2px no-repeat;
+  padding: 20px 0px 0px 48px !important;
+  min-height: 20px;
+  width: 80%;
+  margin-left: 25px;
+  margin-bottom: 10px;
+  border-bottom: solid 1px #ddd;
+  display: block;
+}*/

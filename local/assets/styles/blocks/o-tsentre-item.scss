@@ -1,0 +1,170 @@
+.o-tsentre-item {
+  margin-bottom: 40px;
+
+  .o-tsentre-element-link a {
+    font-family: SF Pro Text;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 24px;
+    color: #508CD3;
+  }
+
+  .o-tsentre-element.element-expert {
+    flex-wrap: wrap;
+    align-items: end;
+  }
+
+  &.element-expert .o-tsentre-element-contacts {
+    margin-top: 10px;
+  }
+
+  .o-tsentre-element.element-expert div {
+    width: 100%;
+  }
+
+  .o-tsentre-element.element-expert .o-tsentre-element-title {
+    color: #3E4A5B;
+    font-family: PT Serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 24px;
+  }
+
+  .o-tsentre-element-position {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 24px;
+    color: #758AA8;
+  }
+
+  .o-tsentre-element.element-structure {
+    display: block;
+  }
+
+  &.element-structure .o-tsentre-item-body {
+    margin-bottom: 10px;
+  }
+
+  .content-text {
+    margin-bottom: 10px;
+  }
+
+  .o-tsentre-contacts {
+    padding-bottom: 44px;
+  }
+
+  .content-description {
+      .content-link {
+          display: block;
+          border: 1px solid #DAE0EA;
+          box-sizing: border-box;
+          border-radius: 2px;
+          background: white;
+          margin-top: 50px;
+          padding: 7px 24px;
+
+          a {
+            font-family: Roboto;
+            font-style: normal;
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 24px;
+            color: #315A7B;
+          }
+      }
+  }
+
+  .o-tsentre-link {
+    display: flex;
+    align-items: center;
+  }
+
+  .o-tsentre-title {
+    font-family: PT Serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 24px;
+    color: #3E4A5B;
+  }
+
+  .o-tsentre-item-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 16px;
+  }
+
+  .o-tsentre-link a {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 24px;
+    color: #758AA8;
+  }
+
+  .o-tsentre-link-arrow {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  .o-tsentre-item-body {
+    display: flex;
+  }
+
+  .o-tsentre-element {
+    width: 50%;
+    border: 1px solid #EFF2F5;
+    box-sizing: border-box;
+    border-radius: 2px;
+    padding: 16px;
+    display: flex;
+    margin-right: 20px;
+  }
+
+  .o-tsentre-element:last-child {
+    margin-right: 0px;
+  }
+
+  .o-tsentre-element-link p {
+    padding: 0px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.32px;
+    text-decoration-line: underline;
+    color: #508CD3;
+  }
+
+  .o-tsentre-element-ico {
+    margin-right: 23px;
+  }
+
+  .o-tsentre-element-title {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 24px;
+    color: #508CD3;
+  }
+
+  .o-tsentre-element-contacts p span {
+    color: #508CD3;
+  }
+
+  &.element-expert .o-tsentre-item-body {
+    margin-bottom: 10px;
+  }
+
+  .o-tsentre-element-scientific-council {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 24px;
+    color: #3E4A5B;
+    margin-top: 20px;
+  }
+}

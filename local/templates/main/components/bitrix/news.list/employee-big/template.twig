@@ -1,0 +1,53 @@
+<div class="employee-big {% if params.THEME %} employee-big--{{ params.THEME }} {% endif %}">
+    <div class="employee-big__cards">
+        {% for item in result.ITEMS %}
+            <div class="employee-big__card" {% if item.EDIT %} {{ item.EDIT}} {% endif %}>
+                {% if item.PREVIEW_PICTURE.SRC and item.PROPERTIES.HIDE_PHOTO.VALUE != "Да" %}
+                    <picture class="employee-big__pic">
+                        <img src="{{ item.PREVIEW_PICTURE.SRC }}" alt="{{ item.NAME }}">
+                    </picture>
+                {% endif %}
+
+                <div class="employee-big__body">
+                    {% if item["~NAME"] %}
+                        <div class="employee-big__title">
+                            {{ item["~NAME"] }}
+                        </div>
+                    {% endif %}
+
+                    {% if item.PROPERTIES.POSITION.VALUE %}
+                        <div class="employee-big__position">
+                            {{ item.PROPERTIES.POSITION.VALUE }}
+                        </div>
+                    {% endif %}
+
+                    {% if item.PROPERTIES.ACADEMIC_DEGREE.VALUE %}
+                        <div class="employee-big__position">
+                            {{ item.PROPERTIES.ACADEMIC_DEGREE.VALUE }}
+                        </div>
+                    {% endif %}
+
+                    <div class="employee-big__contacts">
+                        {% if item.PROPERTIES.PHONE.VALUE %}
+                            <div class="employee-big__phone">
+                                <span>Тел.:</span>
+                                <a href="tel:{{ item.PROPERTIES.PHONE.FORMATTED }}">
+                                    {{ item.PROPERTIES.PHONE.VALUE }}
+                                </a>
+                            </div>
+                        {% endif %}
+
+                        {% if item.PROPERTIES.EMAIL.VALUE %}
+                            <div class="employee-big__email">
+                                <span>E-mail:</span>
+                                <a href="mailto:{{ item.PROPERTIES.EMAIL.VALUE }}">
+                                    {{ item.PROPERTIES.EMAIL.VALUE }}
+                                </a>
+                            </div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>

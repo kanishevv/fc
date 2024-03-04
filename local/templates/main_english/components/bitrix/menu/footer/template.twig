@@ -1,0 +1,7 @@
+<div class="footer-nav">
+	{% for item in result %}
+		<a href="{{ item.LINK }}" class="footer-nav__link {{ item.SELECTED ? 'footer-nav__link_selected' }}">
+			{{ item.TEXT }}
+		</a>
+	{% endfor %}
+</div>

@@ -1,0 +1,15 @@
+<div class="news-container">
+    <div class="news-container__detail">
+        {{ result.NEWS_TEXT }}
+
+        {% if result.SOURCE %}
+            <div class="news-container__source">
+                {{ result.LOC.SOURCE }}
+                <a href="{{ result.SOURCE.HREF }}"
+                   target="_blank">
+                    {{ result.SOURCE.NAME }}
+                </a>
+            </div>
+        {% endif %}
+    </div>
+</div>

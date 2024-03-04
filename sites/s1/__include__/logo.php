@@ -1,0 +1,1 @@
+<a href="<?= SITE_DIR ?>" class="logo"> <img alt="Федеральный Центр Образовательного Законодательства" src="/upload/content/logo.svg" class="logo__image"> </a>

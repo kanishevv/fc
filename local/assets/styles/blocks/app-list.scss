@@ -1,0 +1,13 @@
+.app-list {
+  display: flex;
+
+  &__link {
+    display: inline-block;
+    margin-right: 12px;
+  }
+
+  &__img {
+    width: 133px;
+    height: 40px;
+  }
+}

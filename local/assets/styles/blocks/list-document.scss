@@ -1,0 +1,24 @@
+.list-document {
+  .list-document-element {
+    display: flex;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #EFF2F5;
+    margin-top: 10px;
+  }
+
+  .list-document-element img {
+    width: 24px;
+    height: 24px;
+    margin-right: 8px;
+    margin-top: 5px;
+  }
+
+  .list-document-element a {
+    font-family: SF Pro Text;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 24px;
+    padding: 0;
+  }
+}

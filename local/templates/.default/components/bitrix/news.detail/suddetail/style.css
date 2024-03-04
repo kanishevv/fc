@@ -1,0 +1,10 @@
+.col12 .infobl {
+    width: 960px !important;
+    min-height: 960px !important;
+    padding: 20px 10px !important;
+    overflow: hidden !important;
+}
+
+.news-detail {
+   font-size: 13px;      
+}

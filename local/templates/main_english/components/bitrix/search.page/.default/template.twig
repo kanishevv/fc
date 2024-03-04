@@ -1,0 +1,96 @@
+<section class="search-result">
+	<div class="search-result__row">
+		<div class="search-result__filter">
+			<div class="search-result__tabs tabs">
+				<a href="{{ "/search/?q=" ~ result.REQUEST.QUERY }}" class="tabs__item {{ result.REQUEST.WHERE is empty ? 'tabs__item_selected' }}">
+					<span class="tabs-item__text">Найдено документов -
+						{{ result.COUNT_ALL }}</span>
+				</a>
+				<a href="{{ '/search/?q=' ~ result.REQUEST.QUERY ~ '&where=' }}" class="tabs__item">
+					<svg class="tabs__icon icon">
+						<use xlink:href="{{ params.ASSETS ~ '#iblock_law_about_education' }}"></use>
+					</svg>
+					<span class="tabs-item__text">В базе нормативно-правовых актов</span>
+				</a>
+				<a href="{{ '/search/?q=' ~ result.REQUEST.QUERY ~ '&where=' }}" class="tabs__item">
+					<svg class="tabs__icon icon">
+						<use xlink:href="{{ params.ASSETS ~ '#iblock_practice' }}"></use>
+					</svg>
+					<span class="tabs-item__text">В базе судебных актов</span>
+				</a>
+				<a href="{{ '/search/?q=' ~ result.REQUEST.QUERY ~ '&where=' }}" class="tabs__item">
+					<svg class="tabs__icon icon">
+						<use xlink:href="{{ params.ASSETS ~ '#iblock_faq' }}"></use>
+					</svg>
+					<span class="tabs-item__text">В базе вопросов и ответов</span>
+				</a>
+				{# {% for tabKey, tabName in result.DROPDOWN %} #}
+			{# <a href="{{ "/search/?q=" ~ result.REQUEST.QUERY ~ "&where=" ~ tabKey }}" class="tabs__item {{ result.REQUEST.WHERE == tabKey ? 'tabs__item_selected' }}">
+									<svg class="tabs__icon icon">
+										<use xlink:href="{{ params.ASSETS ~ '#' ~ tabKey }}"></use>
+									</svg>
+									<span class="tabs-item__text">{{ tabName }}</span>
+								</a> #}
+				{# {% endfor %} #}
+			</div>
+		</div>
+	</div>
+	<div class="search-result__col search-result__col--left">
+		<div class="search-result__wrap">
+			<div class="search-result__list">
+				{% if result.ITEMS is not empty %}
+					{% for item in result.ITEMS %}
+						<a href="{{ item.URL }}" class="search-result__item">
+							<div class="search-result__item-title">{{ item.TITLE }}</div>
+							<div class="search-result__item-description">{{ item.DESCRIPTION[:200] }}{{ (listItem.PREVIEW_TEXT|length > 200) ? '...' }}</div>
+						</a>
+					{% endfor %}
+				{% else %}
+					<div class="search-result__empty">По вашему запросу ничего не найдено.</div>
+				{% endif %}
+			</div>
+			{% if result.NavPageNomer is not null %}
+				<div class="search-result__pagination">
+					<div class="pagination">
+						<a href="{{ result.URL ~ '&' ~ result.NAV_RESULT.NavQueryString ~ 'PAGEN_' ~ result.NAV_RESULT.NavNum ~ '=' ~ (result.NAV_RESULT.NavPageNomer - 1) }}" class="pagination__prev">
+							<svg class="pagination__icon icon">
+								<use xlink:href="{{ params.ASSETS }}#arrow_left"></use>
+							</svg>
+						</a>
+						{% for i in result.NAV_RESULT.nStartPage..result.NAV_RESULT.nEndPage %}
+							<a href="{{ result.URL ~ '&' ~ result.NAV_RESULT.NavQueryString ~ 'PAGEN_' ~ result.NAV_RESULT.NavNum ~ '=' ~ i }}" class="pagination__item{{ result.NAV_RESULT.NavPageNomer == i ? ' pagination__item_is-current' }}">{{ i }}</a>
+						{% endfor %}
+						<a href="{{ result.URL ~ '&' ~ result.NAV_RESULT.NavQueryString ~ 'PAGEN_' ~ result.NAV_RESULT.NavNum ~ '=' ~ (result.NAV_RESULT.NavPageNomer + 1) }}" class="pagination__next">
+							<svg class="pagination__icon icon">
+								<use xlink:href="{{ params.ASSETS }}#arrow_right"></use>
+							</svg>
+						</a>
+					</div>
+				</div>
+			{% endif %}
+		</div>
+	</div>
+	<div class="search-result__col search-result__col--right">
+		<div class="search-result__wrap">
+			{% if result.RUBRICS is not empty %}
+				<form id="configform" action="{{ result.FORM_ACTION }}" class="search-form js-search-form-filter">
+					<input
+					type="text" name="q" value="{{ result.REQUEST.QUERY }}" hidden/>
+					{# <input type="text" name="where" value="" hidden/> #}
+					<div class="search-form__title">Рубрики:</div>
+					<ul class="search-form-rubrics">
+						{% for rubric in result.RUBRICS %}
+							<li class="search-form-rubrics__item">
+								<input class="search-form-rubrics__checkbox checkbox" id="{{ rubric.ID }}" data-xml-id="{{ rubric.XML_ID }}" name="search_filter[{{ rubric.XML_ID }}]" type="checkbox" value="" {% if rubric.XML_ID in params.FILTER|keys %} checked {% endif %}>
+								<label for="{{ rubric.ID }}">
+									<span>{{ rubric.NAME }}</span>
+								</label>
+							</li>
+						{% endfor %}
+					</ul>
+					<button class="search-form__btn-reset" type="reset" onclick="this.form.reset();">Сбросить</button>
+				</form>
+			{% endif %}
+		</div>
+	</div>
+</section>

@@ -1,0 +1,40 @@
+<div class="component-pager component-pager--standard">
+    <div class="component-pager__cont component-pager__cont--left">
+        {% for page in result.PAGES %}
+            <a {% if page.URL %} href="{{ page.URL }}" {% endif %}
+                    class="component-pager__page-button {% if page.TEXT == result.NavPageNomer %} component-pager__page-button--selected {% endif %} {{ page.CLASS ?: "" }}">
+                {% if page.ICON %}
+                    <svg class="component-pager__page-icon">
+                        <use xlink:href="{{ result.ASSETS ~ '#' ~ page.ICON.NAME }}"></use>
+                    </svg>
+                {% else %}
+                    {{ page.TEXT }}
+                {% endif %}
+            </a>
+        {% endfor %}
+    </div>
+
+    <div class="component-pager__cont component-pager__cont--right search-form">
+        <div class="search-form__row">
+            <div class="search-form__field">
+                <div class="search-form__input input">
+                    <div class="input__wrapper component-pager__num-wrapper">
+                        <input class="component-pager__page-num js-page-num"
+                               type="text"
+                               name=""
+                               id="page-number"
+                               placeholder="{{ result.LOC_PAGE_NUM }}"
+                               data-url="{{ result.URL_PARAMS }}"
+                               min="1"
+                               max="{{ result.NavPageCount }}">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button class="component-pager__go-button js-pager-go-button">
+            <svg class="icon">
+                <use xlink:href="{{ result.ASSETS ~ '#arrow_right_white' }}"></use>
+            </svg>
+        </button>
+    </div>
+</div>

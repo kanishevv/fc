@@ -1,0 +1,48 @@
+.tree {
+  &__list {
+    list-style: none;
+    padding-top: 12px;
+    margin: 0;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 24px;
+    color: #414D5D;
+
+    a {
+      color: #414D5D;
+      display: inline-flex;
+      max-width: calc(100% - 40px);
+    }
+
+    &_lvl-1 {
+      padding: 12px 0 0 0;
+    }
+
+    &_lvl-2 {
+      font-weight: 400;
+      color: #508CD3;
+
+      a {
+        color: #508CD3;
+      }
+    }
+  }
+
+  &__item {
+    margin-bottom: 12px;
+
+    &-link {
+      cursor: pointer;
+    }
+
+    &-plus {
+      cursor: pointer;
+      font-size: 18px;
+      padding: 5px;
+
+      &--no-display {
+        display: none;
+      }
+    }
+  }
+}

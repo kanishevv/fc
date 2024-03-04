@@ -1,0 +1,49 @@
+.captcha {
+  font-size: 14px;
+  line-height: 20px;
+  color: #3e4a5b;
+  margin-bottom: 5px;
+
+  &__info {
+    margin-bottom: 10px;
+  }
+  
+  &__inner {
+    display: flex;
+    align-content: center;
+  }
+
+  &__left {
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+
+    &--column {
+      flex-direction: column;
+      align-items: normal;
+
+      a {
+        padding-top: 1px;
+      }
+    }
+  }
+
+  &__text {
+      margin-bottom: 5px;
+      span {
+        color: #f1504d;
+      }
+  }
+
+  &__input {
+      width: 215px;
+      height: 40px;
+      padding: 0px 10px;
+
+      &--wrapper {
+        input:invalid + span {
+          display: block;
+        }
+      }
+  }
+}

@@ -1,0 +1,25 @@
+<?
+$aMenuLinks = Array(
+	Array(
+		"page1", 
+		"/en/page1.php", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Mission", 
+		"/en/about-fcel/mission/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Management", 
+		"/en/about-fcel/management/", 
+		Array(), 
+		Array(), 
+		"" 
+	)
+);
+?>

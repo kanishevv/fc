@@ -1,0 +1,8 @@
+<div class="rubrics pt-12">
+    {% for rubric in result.RUBRICS %}
+        <a href="{{ params.DETAIL_LINK ~ "?RUBRIC=" ~ rubric.XML_ID }}{% if params.IBLOCK_ID %}{{ "&IBLOCK_ID=" ~ params.IBLOCK_ID }}{% endif %}"
+           class="rubrics__link">
+            {{ rubric.NAME ~ " (" ~ rubric.COUNT ~ ")" }}
+        </a>
+    {% endfor %}
+</div>

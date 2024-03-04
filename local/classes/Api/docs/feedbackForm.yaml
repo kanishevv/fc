@@ -1,0 +1,72 @@
+swagger: "2.0"
+info:
+  version: "1.0.0"
+  title: "Feedback Form"
+host: "fcoz.ru"
+schemes:
+- "https"
+- "http"
+paths:
+  /api/index.php:
+    post:
+      consumes:
+      - multipart/form-data
+      parameters:
+        - name: path
+          in: query
+          type: string
+          required: true
+          default: feedbackForm
+          description: ""
+        - name: user_last_name
+          in: formData
+          type: string
+          required: true
+          description: "Фамилия"
+        - name: user_first_name
+          in: formData
+          type: string
+          required: true
+          description: "Имя"
+        - name: user_other_name
+          in: formData
+          type: string
+          description: "Отчество"
+        - name: user_phone
+          in: formData
+          type: string
+          description: "Телефон. Только символы '+()-', цифры и пробел"
+        - name: user_email
+          in: formData
+          type: string
+          required: true
+          description: "Email"
+        - name: text
+          in: formData
+          type: string
+          required: true
+          description: "Текст сообщения. Макс 3500 символов"
+        - name: captcha_sid
+          in: formData
+          type: string
+          required: true
+          description: "Код капчи"
+        - name: captcha_word
+          in: formData
+          type: string
+          required: true
+          description: "Текст капчи"
+        - name: privacy
+          in: formData
+          type: boolean
+          required: true
+          description: "Пользовательское соглашение"
+        - name: file[]
+          in: formData
+          type: array
+          items:
+            type: file
+          collectionFormat: multi
+      responses:
+        "200":
+          description: "work"

@@ -1,0 +1,33 @@
+@mixin clearfix {
+  &::after {
+    clear: both;
+    content: '';
+    display: table;
+  }
+}
+
+@mixin responsive-img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+@mixin btn-reset {
+  background-color: unset;
+  border: 0;
+}
+
+@mixin pholder() {
+  &:-ms-input-placeholder {
+    @content;
+  }
+  &:-moz-placeholder {
+    @content;
+  }
+  &::-moz-placeholder {
+    @content;
+  }
+  &::-webkit-input-placeholder {
+    @content;
+  }
+}

@@ -1,0 +1,31 @@
+swagger: "2.0"
+info:
+  version: "1.0.0"
+  title: "GetListValues"
+host: "fcoz.ru"
+schemes:
+- "https"
+- "http"
+paths:
+  /api/index.php:
+    get:
+      parameters:
+      - name: "path"
+        in: "query"
+        type: "string"
+        required: true
+        default: "getListValues"
+        description: ""
+      - name: "iblockCode"
+        in: "query"
+        type: "string"
+        required: true
+        description: "Символьный код инфоблока (prav_base or sudebnaya-praktika)"
+      - name: "propertyCode"
+        in: "query"
+        type: "string"
+        required: true
+        description: "Символьный код свойства (DOCTYPE or ACCEPTOR)"
+      responses:
+        "200":
+          description: "work"

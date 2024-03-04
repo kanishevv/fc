@@ -1,0 +1,21 @@
+swagger: "2.0"
+info:
+  version: "1.0.0"
+  title: "GetRubricValues"
+host: "fcoz.ru"
+schemes:
+- "https"
+- "http"
+paths:
+  /api/index.php:
+    get:
+      parameters:
+      - name: "path"
+        in: "query"
+        type: "string"
+        required: true
+        default: "getRubricValues"
+        description: ""
+      responses:
+        "200":
+          description: "work"

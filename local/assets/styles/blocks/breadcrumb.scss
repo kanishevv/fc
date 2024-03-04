@@ -1,0 +1,49 @@
+.breadcrumb {
+  padding: 24px 0;
+
+  &__container {
+    display: flex;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    line-height: 22px;
+    color: #48566a;
+
+    span {
+      font-weight: 500;
+    }
+  }
+
+  &__icon {
+    width: 24px;
+    height: 24px;
+    margin: 0 12px;
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &__item:first-child &__icon {
+    margin: 0;
+  }
+}
+@include media-breakpoint-down(sm) {
+  .breadcrumb__container {
+    flex-wrap: wrap;
+  }
+  .breadcrumb__icon {
+    width: 20px;
+    height: 20px;
+    margin: 0 4px;
+    flex-shrink: 0;
+  }
+}

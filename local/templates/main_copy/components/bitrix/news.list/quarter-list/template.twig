@@ -1,0 +1,13 @@
+{% if result.ITEMS %}
+    <div class="catalog-section-list catalog-section-list--two-cols">
+        <ul>
+            {% for item in result.ITEMS %}
+                <li>
+                    <a {% if item.URL %} href="{{ item.URL }}" {% endif %} target="_blank">
+                        {{ item.NAME }}
+                    </a>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endif %}

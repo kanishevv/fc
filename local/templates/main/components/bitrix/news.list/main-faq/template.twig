@@ -1,0 +1,35 @@
+<section class="card card--articles">
+	<div class="card__headline">
+		<div class="card__title">
+			<a href="{{ params.LIST_PAGE_URL }}" class="card__title-link">{{ params.TITLE }}</a>
+		</div>
+		<div class="card__pagination"></div>
+	</div>
+	<div class="card__content">
+		<div class="card__list swiper-container">
+			<div class="card__list-wrapper swiper-wrapper">
+				{% for listRow in result.ITEMS|batch(5) %}
+					<div class="card__list-item">
+						{% for listItem in listRow %}
+							<article class="article-short-preview">
+								<div>
+									<div class="article-short-preview__title">{{ listItem.PREVIEW_TEXT[:200] }}{{ (listItem.PREVIEW_TEXT|length > 200) ? '...' }}</div>
+									<div class="article-short-preview__description">{{ listItem.DETAIL_TEXT[:200] }}{{ (listItem.DETAIL_TEXT|length > 200) ? '...' }}</div>
+								</div>
+								<div class="article-short-preview__bottom">
+									<div class="article-short-preview__rubric{{ ' article-short-preview__rubric--' ~ listItem.PROPERTIES.RUBRIC.VALUE }}">
+										<svg class="article-short-preview__rubric-icon icon">
+											<use xlink:href="{{ params.ASSETS ~ '#clr_' ~ listItem.PROPERTIES.RUBRIC.VALUE }}"></use>
+										</svg>
+										<span class="article-short-preview__rubric-text">{{ listItem.DISPLAY_PROPERTIES.RUBRIC.DISPLAY_VALUE }}</span>
+									</div>
+								</div>
+								<a href="{{ listItem.DETAIL_PAGE_URL }}" class="article-short-preview__link"></a>
+							</article>
+						{% endfor %}
+					</div>
+				{% endfor %}
+			</div>
+		</div>
+	</div>
+</section>

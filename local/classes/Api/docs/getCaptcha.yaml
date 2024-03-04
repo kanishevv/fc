@@ -1,0 +1,20 @@
+swagger: "2.0"
+info:
+  version: "1.0.0"
+  title: "Get captcha"
+host: "fcoz.ru"
+schemes:
+- "https"
+- "http"
+paths:
+  /api/index.php:
+    get:
+      parameters:
+      - name: "path"
+        in: "query"
+        type: "string"
+        required: true
+        default: "getCaptcha"
+      responses:
+        "200":
+          description: "work"

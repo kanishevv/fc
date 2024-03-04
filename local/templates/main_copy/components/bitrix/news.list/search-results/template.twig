@@ -1,0 +1,58 @@
+<div class="search-result__wrap">
+    <div class="search-result__list">
+        {% if result.ITEMS is not empty %}
+            {% for item in result.ITEMS %}
+                <a href="{{ item.URL }}"
+                   class="search-result__item search-result__item--flex" {{ item.EDIT_ELEMENT_ATTR }}>
+                    <div class="search-result__item-num">
+                        <span>{{ item.POS }}</span>
+                    </div>
+                    <div class="search-result__item-cont">
+                        <div class="search-result__item-title">{{ item.TITLE }}</div>
+                        {% if item.DESCRIPTION %}
+                            <div class="search-result__item-description">
+                                {{ item.DESCRIPTION }}
+                            </div>
+                        {% endif %}
+
+                        {% if item.DATE_PUBLICATION or item.PROPERTIES.RUBRIC.DISPLAY_ARRAY or (params.DATE_CHANGE == "Y" and item.DATE_CHANGE) %}
+                            <div class="search-result__item-footer">
+                                <div class="search-result__item-time">
+                                    <time class="article-short-preview__time">
+                                        {{ item.DATE_PUBLICATION }}
+                                    </time>
+                                </div>
+                                {% if item.PROPERTIES.RUBRIC.DISPLAY_ARRAY %}
+                                    <div class="search-result__item-rubrics">
+                                        {% for rb in  item.PROPERTIES.RUBRIC.DISPLAY_ARRAY %}
+                                            <div class="search-result__item-rubric article-short-preview__rubric{{ ' article-short-preview__rubric--' ~ rb.VALUE }}">
+                                                <svg class="article-short-preview__rubric-icon icon">
+                                                    <use xlink:href="{{ params.ASSETS ~ '#clr_' ~ rb.VALUE }}"></use>
+                                                </svg>
+                                                <span class="article-short-preview__rubric-text">{{ rb.NAME | slice(0, 30) }}{{ (rb.NAME|length > 30) ? '...' }}</span>
+                                            </div>
+                                        {% endfor %}
+                                    </div>
+                                {% endif %}
+                            </div>
+                        {% endif %}
+                    </div>
+                </a>
+            {% endfor %}
+        {% else %}
+            <div class="search-result__empty">
+                <svg class="search-result__empty-icon">
+                    <use xlink:href="{{ params.ASSETS ~ '#search_empty' }}"></use>
+                </svg>
+                <div class="search-result__empty-title">Ничего не найдено</div>
+                <div class="search-result__empty-text">
+                    Попробуйте изменить запрос или фильтрацию и попробуйте снова
+                </div>
+            </div>
+        {% endif %}
+    </div>
+</div>
+
+{% if result.NAV_STRING %}
+    {{ result.NAV_STRING }}
+{% endif %}

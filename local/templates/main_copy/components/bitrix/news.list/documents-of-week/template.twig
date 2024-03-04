@@ -1,0 +1,32 @@
+<section class="card {{ params.DATA_TYPE == 'DOC' ? 'card--articles documents' }}">
+    <div class="card__content documents-of-week">
+        <div class="card__list swiper-container">
+            <div class="card__list-wrapper swiper-wrapper">
+                {% for listRow in result.ITEMS|batch(5) %}
+                    <div class="card__list-item">
+                        {% for listItem in listRow %}
+                            <article class="article-short-preview">
+                                <div>
+                                    <div class="article-short-preview__title">
+                                        {{ listItem.PROPERTIES.DOCUMENT_TYPE.VALUE ~ '<br />'
+                                        ~ listItem.PROPERTIES.CREATOR.VALUE ~ '<br />'
+                                        ~ listItem.DATE_NUM_DOC }}
+                                    </div>
+                                    <div class="article-short-preview__description">{{ listItem.PREVIEW_TEXT }}</div>
+                                </div>
+                                <div class="article-short-preview__bottom">
+                                    {% if listItem.PUBLICATION_DATE %}
+                                        <time class="article-short-preview__time">
+                                            (Документ опубликован {{ listItem.PUBLICATION_DATE }} г.)
+                                        </time>
+                                    {% endif %}
+                                </div>
+                                <a href="{{ listItem.PROPERTIES.LINK.VALUE }}" class="article-short-preview__link"></a>
+                            </article>
+                        {% endfor %}
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>

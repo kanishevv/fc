@@ -1,0 +1,24 @@
+<section class="card-list">
+    {% for listItem in result.ITEMS %}
+        <article class="article-short-preview {% if loop.first %} {{ "article-short-preview--border-top" }} {% endif %}"
+                {{ listItem.EDIT_ELEMENT_ATTR }}>
+            <div>
+                <div class="article-short-preview__title">
+                    {{ listItem.TITLE }}
+                </div>
+                <div class="article-short-preview__description">{{ listItem.PREVIEW_TEXT }}</div>
+            </div>
+            <div class="article-short-preview__bottom">
+                {% if listItem.PUBLICATION_DATE %}
+                    <time class="article-short-preview__time article-short-preview__time--dark">
+                        (Документ опубликован {{ listItem.PUBLICATION_DATE }} г.)
+                    </time>
+                {% endif %}
+            </div>
+            <a href="{{ listItem.PROPERTIES.LINK.VALUE }}" class="article-short-preview__link"></a>
+        </article>
+    {% endfor %}
+    {% if result.NAV_STRING %}
+        {{ result.NAV_STRING }}
+    {% endif %}
+</section>
